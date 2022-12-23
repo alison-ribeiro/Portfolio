@@ -7,6 +7,7 @@ export const GlobalStyle = createGlobalStyle`
 html, body {
 	font-size: 32px;
 	overflow: hidden;
+	background-color: ${props => props.theme.colors.bgColorSecundary};
 }
   html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -24,8 +25,9 @@ time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	
 	vertical-align: baseline;
+	color: ${props => props.theme.colors.primary};
+	transition: all .1s linear;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
@@ -50,14 +52,17 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+a{
+	text-decoration: none;
+}
 
 
 @media ${devices.mobileL} {
   html, body{
-		font-size: 5px;
+		font-size: 20px;
 	}
 }
-  
+
 
 `;
 

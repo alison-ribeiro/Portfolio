@@ -1,37 +1,72 @@
-import {Nav, HeaderImage, ContainerHeader, Container, Ul, Footer }  from "./styles";
+
+import { useState } from "react";
+
+import { Link } from "react-router-dom";
+import {Nav, ContainerHeader, Container, Ul, Footer }  from "./styles";
+import { AiOutlineClose } from 'react-icons/ai';
+
+import Perfil from './Perfil.png';
+
+import { HiMenu } from 'react-icons/hi';
 
 function NavBar() {
+
+  const [menu, setMenu] = useState(false);
+  const handleMenu = () => {
+    menu === true ? setMenu(false) : setMenu(true);
+  }
+
   return (
-    <Nav>
+    <>
+      <HiMenu onClick={handleMenu}/>
+      
+      <Nav sideBar={menu}>
+        <AiOutlineClose onClick={handleMenu} />
       <ContainerHeader>
-        <HeaderImage/>
+
+        
+          <img src={Perfil} alt="Foto de perfil"></img>
+        
       </ContainerHeader>
 
       <Container>
         <Ul>
           <li>
-            <p>Home</p>
+            <Link to="/">
+              <p>Home</p>
+            </Link>
           </li>
           <li>
-            <p>Sobre</p>
+            <Link to="/Sobre">
+              <p>Sobre</p>
+            </Link>
           </li>
           <li>
-            <p>Habilidades</p>
+            <Link to="/Habilidades">
+              <p>Habilidades</p>
+            </Link>
           </li>
           <li>
-            <p>Projetos</p>
+            <Link to="/Projetos">
+              <p>Projetos</p>
+            </Link>
           </li>
           <li>
-            <p>Contato</p>
+            <Link to="/Contatos">
+              <p>Contatos</p>
+            </Link>
           </li>
 
         </Ul>
       </Container>
       <Footer>
-        Rodape
+        © 2022  
+        <a href="https://github.com/alison-ribeiro" target="blank"> Alison</a>
       </Footer>
     </Nav>
       
+    </>
+   
   );
 }
  export default NavBar;
