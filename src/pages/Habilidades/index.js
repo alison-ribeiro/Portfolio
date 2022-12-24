@@ -1,12 +1,18 @@
 
 import FlipCard from '../../Components/FlipCard';
-import { Container  } from './styles';
+import Section from '../../Components/Section';
+import { Container, ContainerCards  } from './styles';
 
 function Habilidades(){
   
   return(
     <Container>
-      <FlipCard></FlipCard>
+      <Section title="Habilidade">
+        <ContainerCards>
+          <FlipCard/>
+        </ContainerCards>
+      </Section>
+      
     </Container>
   )
 }

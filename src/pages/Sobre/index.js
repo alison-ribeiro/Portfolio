@@ -1,8 +1,9 @@
 import Card from '../../Components/Cards';
-import { Container, ContainerAbout, Photo , About, Services, Cards  } from './styles';
+import { Container, ContainerAbout, Photo , About, Cards  } from './styles';
 import { BiDesktop } from 'react-icons/bi';
 import { BsBrush } from 'react-icons/bs';
 import { DiReact } from 'react-icons/di';
+import Section from '../../Components/Section';
 
 
 function Sobre(){
@@ -26,12 +27,8 @@ function Sobre(){
   
   return(
     <Container>
-      
-      
-      
-      <ContainerAbout>
-        <h1>Sobre mim</h1>
-        <div className='container'>
+      <Section title={"Sobre"}>
+        <ContainerAbout>
           <Photo>
             <img src='https://webtech.pt/wp-content/uploads/2022/06/O-que-faz-afinal-um-programador-web.png' alt='Foto de codigo'></img>
           </Photo>
@@ -45,19 +42,20 @@ function Sobre(){
             <p>Cidade :Gravatai</p>
             <p>Freelance :Disponível</p>
           </About>
-        </div>
-      </ContainerAbout>
-
-      <Services>
-        <h2>Serviços</h2>
-        <Cards>
-          <Card info={cards}/>
-        </Cards>
-      </Services>
+        
+        </ContainerAbout>
+      </Section>
+      <Section title={"Serviços"}>
+          <Cards>
+            <Card info={cards}/>
+          </Cards>
+      </Section>
       
+     
       
     </Container>
   )
 }
 
 export default Sobre;
+
