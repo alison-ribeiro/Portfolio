@@ -99,10 +99,18 @@ export const Ul = styled.ul`
       top: 0;
       height: 100%;
       z-index: 1;
-      &.active{
+      &.active {
         background-color: ${props => props.theme.colors.blue};
+        
       }
       
+      &:hover p{
+        color: ${props => props.theme.colors.blue};
+      }
+      &.active p{
+        color: white;
+        
+      }
     }
     &::before {
       content: " ";
@@ -110,6 +118,7 @@ export const Ul = styled.ul`
       width:0%;
       height: 100%;
       background-color: ${props => props.theme.colors.blue};
+      opacity: .5;
       left: 0;
       top: 0;
       transition: 0.5s ease-out;
@@ -117,6 +126,7 @@ export const Ul = styled.ul`
     }
     &:hover::before{
       width:100%;
+      
       
     }
     

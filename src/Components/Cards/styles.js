@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+//const active = props => props.active;
+
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -9,7 +11,7 @@ export const Container = styled.div`
   border-radius: 4px;
   padding: 20px 10px;
   margin: 30px 0;
-  
+  height: 150px;
 
   h3{
     font-size: .5rem;

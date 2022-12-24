@@ -1,10 +1,12 @@
-import { Container } from './styles';
 
+import FlipCard from '../../Components/FlipCard';
+import { Container  } from './styles';
 
 function Habilidades(){
+  
   return(
     <Container>
-      Você está na pagina Habilidades
+      <FlipCard></FlipCard>
     </Container>
   )
 }

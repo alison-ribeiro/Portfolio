@@ -1,29 +1,10 @@
 import { Container } from './styles'
-import { BiDesktop } from 'react-icons/bi'
-import { BsBrush } from 'react-icons/bs'
-import { DiReact } from 'react-icons/di'
 
-function Card(){
-  const Cards = [
-    {
-      icon: <DiReact/>,
-      title: "Front-End",
-      resume: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem tenetur ratione quod.",
-    },
-    {
-      icon: <BsBrush/>,
-      title: "Web-Designer",
-      resume: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem tenetur ratione quod.",
-    },
-    {
-      icon: <BiDesktop/>,
-      title: "Desenvolvedor Desktop",
-      resume: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem tenetur ratione quod.",
-    },
-  ]
+
+function Card({info}){
   return(
     <>
-     {Cards.map(({icon, title, resume}) =>(
+     {info.map(({icon, title, resume}) =>(
             <Container>
               {icon}
               <h3>{title}</h3>

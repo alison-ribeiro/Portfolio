@@ -1,9 +1,29 @@
 import Card from '../../Components/Cards';
 import { Container, ContainerAbout, Photo , About, Services, Cards  } from './styles';
-
+import { BiDesktop } from 'react-icons/bi';
+import { BsBrush } from 'react-icons/bs';
+import { DiReact } from 'react-icons/di';
 
 
 function Sobre(){
+  const cards = [
+    {
+      icon: <DiReact/>,
+      title: "Front-End",
+      resume: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem tenetur ratione quod.",
+    },
+    {
+      icon: <BsBrush/>,
+      title: "Web-Designer",
+      resume: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem tenetur ratione quod.",
+    },
+    {
+      icon: <BiDesktop/>,
+      title: "Desenvolvedor Desktop",
+      resume: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem tenetur ratione quod.",
+    },
+  ]
+  
   return(
     <Container>
       
@@ -31,7 +51,7 @@ function Sobre(){
       <Services>
         <h2>Serviços</h2>
         <Cards>
-          <Card/>
+          <Card info={cards}/>
         </Cards>
       </Services>
       
