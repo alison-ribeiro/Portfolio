@@ -6,15 +6,15 @@ export const Container = styled.div`
     display: flex;
     position: relative;
     width: 250px;
-    height: 820px;
-    padding-top: 15px;
+    height: 350px;
+    margin: 0 10px;
     
+     
 `
-
 export const TheCard = styled.div`
   position: absolute;
   width: 100%;
-  height: 350px;
+  height: 100%;
   transform-style: preserve-3d;
   transition: all .5s linear;
   border-radius:20px;
@@ -34,8 +34,10 @@ export const TheFront = styled.div`
   border-radius:20px;
   left: 0;
   top: 0;
-  
-  .container{
+  h5{
+    margin-top: 15px;
+  }
+  .container-header{
     display: grid;
     place-items: center;
     height: 200px;
@@ -100,6 +102,7 @@ export const TheBack = styled.div`
   border-radius: 20px;
   color: #333;
   transform: rotateY(180deg);
+  
   .container-back-header{
     display: flex;
     place-content: center;
@@ -116,7 +119,7 @@ export const TheBack = styled.div`
     }
   }
   .scroll{
-    height: 200px;
+    height: 180px;
     overflow-y: auto;
   }
   h5{
@@ -133,9 +136,8 @@ export const TheBack = styled.div`
     li{
       font-size: .6rem;
       width: 80%;
-      margin: 10px 0;
+      margin: 8px 0 0 20px ;
       list-style: disc;
-      
     }
   }
   

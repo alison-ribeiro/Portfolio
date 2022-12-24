@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const ContainerPag = styled.section`
   display: flex;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   margin-top: 20px;
   
   h2{

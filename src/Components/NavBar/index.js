@@ -50,7 +50,7 @@ function NavBar() {
         <Container>
           <Ul>
             {links.map(({path, label}) =>(
-              <li>
+              <li key={path}>
                 <NavLink to={path} onClick={handleMenu}>
                 <p>{label}</p>
               </NavLink>
