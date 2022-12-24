@@ -2,6 +2,21 @@ import { Container, Title,Paragraph, ContainerIcon } from './styles';
 import { FiFacebook, FiLinkedin, FiGithub } from 'react-icons/fi';
 
 function Home(){
+
+  const icons = [
+    {
+      href: 'https://www.facebook.com/people/Alison-Alves/100007897695252/',
+      icon: <FiFacebook/>,
+    },
+    {
+      href: 'https://github.com/alison-ribeiro',
+      icon: <FiGithub/>,
+    },
+    {
+      href: 'https://www.linkedin.com/in/alison5253/',
+      icon: <FiLinkedin/>,
+    },
+  ]
   return(
     <Container>
       <Title>
@@ -14,22 +29,13 @@ function Home(){
       </Paragraph>
       <ContainerIcon>
         <ul>
-          <li>
-            <a href='https://www.facebook.com/people/Alison-Alves/100007897695252/' target='blank'>
-              <FiFacebook/>
-            </a>
-          </li>
-          <li>
-            <a href='https://github.com/alison-ribeiro' target='blank'>
-              <FiGithub/>
-            </a>
-          </li>
-          <li>
-            <a href='https://www.linkedin.com/in/alison5253/' target='blank'>
-              <FiLinkedin/>
-            </a>
-          </li>
-         
+          {icons.map(({href, icon}) =>(
+            <li>
+              <a href={href} target='blank'>
+                {icon}
+              </a>
+            </li>
+          ))}
         </ul>
       </ContainerIcon>
     </Container>

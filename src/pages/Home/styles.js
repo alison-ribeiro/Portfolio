@@ -6,22 +6,26 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
  
 `
+
+
 export const Title = styled.h1`
   display: flex;
   flex-direction: column;
   text-align: center;
-  width: 300px;
   color: ${props => props.theme.colors.black};
   span{
     color: ${props => props.theme.colors.blue} ;
   }
-  @media ${devices.mobileL} {
-    
+  
+  @media ${devices.tablet} {
+    width: 400px;
   }
+  
+  
 
 `
 export const Paragraph = styled.p`
@@ -29,14 +33,15 @@ export const Paragraph = styled.p`
   font-size: .8rem;
   margin: 30px 0;
   text-align: center;
-  width: 900px;
-  padding: 0 15px;
-  @media ${devices.mobileL} {
-    width: 320px;
-  
+  width: 58vw;
+  padding: 0 30px;
+  line-height: 1.33rem;
+  @media ${devices.tablet} {
+    width: 90vw;
   }
+ 
 `
-export const ContainerIcon = styled.p`
+export const ContainerIcon = styled.div`
   display: flex;
   ul{
     display: flex;
@@ -52,15 +57,16 @@ export const ContainerIcon = styled.p`
         padding: 16px;
         border-radius: 50%;
         border: 3px solid ${props => props.theme.colors.secundary};
+        &:hover{
+            border-color: ${props => props.theme.colors.blue};
+        }
+        &:hover svg{
+            color: ${props => props.theme.colors.blue};
+        }
+        
       }
     }
   }
-  @media ${devices.mobileL} {
-    a{
-      font-size: 2.5rem;
-    }
-    
-		
-	
-  }
+  
+  
 `

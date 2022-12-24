@@ -5,32 +5,46 @@ import { devices } from "../../Responsive";
 
 export const Nav = styled.nav`
   display: flex;
-  justify-content: space-between;
   flex-direction: column;
-  height: 100%;
-  width: 380px;
+  justify-content: space-between;
+  padding: 20px 10px;
+  width: 390px;
+  height: calc(100vh - 25px);
   background-color: ${props => props.theme.colors.bgColor};
   border-right: 1px solid ${props => props.theme.colors.secundary};
   overflow: hidden;
   overflow-y: auto;
+  position: relative;
+
   >svg{
     display: none;
   }
 
-  @media ${devices.mobileL} {
-    width: 250px;
-    height: 100vh;
+
+
+  @media ${devices.tablet} {
+    width: 450px;
     position: absolute;
-    left: ${props => props.sideBar ? '0px' : '-100%'};;
+    left: ${props => props.sideBar ? '0px' : '-100%'};
     transition: all .8s linear;
+    z-index: 1;
+    height: calc(100vh - 80px);
     >svg{
       display: flex;
       position: absolute;
       font-size: 50px;
-
-      right: 10px;
+      right: 0;
     }
-  }
+  } 
+
+  @media ${devices.mobileL} {
+    
+    width: 250px; 
+    >svg{    
+      font-size: 50px;
+    }
+  } 
+    
 `
 export const ContainerHeader = styled.div`
   display: flex;
@@ -47,54 +61,79 @@ export const ContainerHeader = styled.div`
 `
 
 export const Container = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  min-height: 300px;
- 
+  max-height: 90vh;
+  height: 320px;
+
+  @media ${devices.tablet} {
+
+    height: 385px;
+  }
+  @media ${devices.mobileL} {
+
+    height: 450px;
+
+  }
 `
 
 export const Ul = styled.ul`
-  
-  margin: 100px 0;
-  width: 100%;
-
-
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-top: 15px;
+  height: 100%;
   li{
     text-align: center;
-    margin: 18px 0;
-    padding: 8px 0;
+    padding: 20px 0;
     font-size: .81rem;
     font-weight: bold;
     width: 100%;
-    border: 1px solid black;
     position: relative;
-    
-    &:before {
-      content: '';
+
+    a{
+      display: flex;
       position: absolute;
-      width: 20px;
-      height: inherit;
-      background-color: black;
-      border-radius: 50%;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      right: 0;
       top: 0;
-      left: 1em;
-      transition: 0.5s ease-out;
-      z-index: -1;
-     }
-     &:hover:before{
-        transform: scale(7);
-       
+      height: 100%;
+      z-index: 1;
+      &.active{
+        background-color: ${props => props.theme.colors.blue};
       }
+      
+    }
+    &::before {
+      content: " ";
+      position: absolute;
+      width:0%;
+      height: 100%;
+      background-color: ${props => props.theme.colors.blue};
+      left: 0;
+      top: 0;
+      transition: 0.5s ease-out;
+      
+    }
+    &:hover::before{
+      width:100%;
+      
+    }
+    
+
   }
-  @media ${devices.mobileL} {
-    margin: 80px 0;
+  
+  @media ${devices.tablet} {
+    
     li{
       font-size: 1rem;
     }
 	
   }
+
+ 
+
+  
 `
 export const Footer = styled.footer`
   display: flex;
@@ -108,23 +147,11 @@ export const Footer = styled.footer`
     font-weight: bolder;
     margin-left: 5px;
   }
-  @media ${devices.mobileL} {
-    margin-top: 16px;
+  
+
+  @media ${devices.tablet}{
+    
     font-size: .8rem;
-	
   }
-  
-`
-
-
-export const Teste = styled.div`
-
-
-.teste{
-  
-  @media ${devices.mobileL} {
-    display: flex!important;
-	
-  }
-}
+ 
 `

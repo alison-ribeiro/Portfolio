@@ -5,9 +5,12 @@ export const GlobalStyle = createGlobalStyle`
 
 
 html, body {
+	width: 100vw;
+	height: 100vh;
 	font-size: 32px;
 	overflow: hidden;
 	background-color: ${props => props.theme.colors.bgColorSecundary};
+
 }
   html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -28,6 +31,19 @@ time, mark, audio, video {
 	vertical-align: baseline;
 	color: ${props => props.theme.colors.primary};
 	transition: all .1s linear;
+	::-webkit-scrollbar {
+    background-color: #383838;
+    width: 8px;
+    
+  }
+  ::-webkit-scrollbar-thumb {
+      background-color: #6b6b6b;
+      border-radius: 10px;
+  }
+  ::-webkit-scrollbar-track {
+      background-color: #383838;
+      border-radius: 10px;
+  }
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 

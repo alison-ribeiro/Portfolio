@@ -34,9 +34,8 @@ function App() {
         <GlobalStyle/> 
         <Container>
           
-          <NavBar>
-            
-          </NavBar>
+          <NavBar/>
+    
               <button onClick={handleTheme}>Trocar tema</button>
             <Routes>
               <Route path="/" element={<Home/>}/>
