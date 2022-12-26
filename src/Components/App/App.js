@@ -16,9 +16,13 @@ import  Habilidades  from '../../pages/Habilidades';
 import  Projetos  from '../../pages/Projetos';
 import  Contatos  from '../../pages/Contatos';
 
+import UserContext from '../../Context/ShowMoreContext';
+
 function App() {
 
   const [theme, setTheme] = useState("light");
+  const [showMore, setShowMore] = useState(3);
+ 
   
   const handleTheme = () => {
     theme === "light" ? setTheme('dark') : setTheme('light');
@@ -27,27 +31,29 @@ function App() {
 
 
   return (
-    <ThemeProvider theme={theme === 'light' ? ligthTheme : darkTheme}>
-      <Router>
+    <UserContext.Provider value={{showMore, setShowMore}}>
+      <ThemeProvider theme={theme === 'light' ? ligthTheme : darkTheme}>
+        <Router>
 
-      
-        <GlobalStyle/> 
-        <Container>
-          
-          <NavBar/>
-    
-              <button onClick={handleTheme}>Trocar tema</button>
-            <Routes>
-              <Route path="/" element={<Home/>}/>
-              <Route path="/Sobre" element={<Sobre/>}/>
-              <Route path="/Habilidades" element={<Habilidades/>}/>
-              <Route path="/Projetos" element={<Projetos/>}/>
-              <Route path="/Contatos" element={<Contatos/>}/>
-            </Routes>
-              
-        </Container>
-      </Router>
-    </ThemeProvider>
+        
+          <GlobalStyle/> 
+          <Container>
+            
+            <NavBar/>
+  
+                <button onClick={handleTheme}>Trocar tema</button>
+              <Routes>
+                <Route path="/" element={<Home/>}/>
+                <Route path="/Sobre" element={<Sobre/>}/>
+                <Route path="/Habilidades" element={<Habilidades/>}/>
+                <Route path="/Projetos" element={<Projetos/>}/>
+                <Route path="/Contatos" element={<Contatos/>}/>
+              </Routes>
+                
+          </Container>
+        </Router>
+      </ThemeProvider>
+    </UserContext.Provider>
     
   );
 }
