@@ -27,7 +27,7 @@ function Sobre(){
   
   return(
     <Container>
-      <Section title={"Sobre"}>
+      <Section title={"Sobre"} seeAll={false}>
         <ContainerAbout>
           <Photo>
             <img src='https://webtech.pt/wp-content/uploads/2022/06/O-que-faz-afinal-um-programador-web.png' alt='Foto de codigo'></img>
@@ -45,7 +45,7 @@ function Sobre(){
         
         </ContainerAbout>
       </Section>
-      <Section title={"Serviços"}>
+      <Section title={"Serviços"} seeAll={false}>
           <Cards>
             <Card info={cards}/>
           </Cards>

@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { ThemeProvider } from 'styled-components';
 import {ligthTheme, darkTheme} from '../../Theme/';
@@ -17,36 +17,55 @@ import  Projetos  from '../../pages/Projetos';
 import  Contatos  from '../../pages/Contatos';
 
 import UserContext from '../../Context/ShowMoreContext';
+import LoaderContext from '../../Context/Loader';
+import axios from 'axios';
 
 function App() {
 
   const [theme, setTheme] = useState("light");
   const [showMore, setShowMore] = useState(3);
  
-  
+
+  const [loading, setLoading] = useState(true);
+
+  const [apiGitHub, setApiGitHub] = useState([]);
+
   const handleTheme = () => {
     theme === "light" ? setTheme('dark') : setTheme('light');
   }
-
-
-
+  console.log(apiGitHub);
+  useEffect(() => {
+   
+    axios.get("https://api.github.com/users/alison-ribeiro/repos")
+    .then((resp) => {
+      
+        setApiGitHub(resp.data);
+        setLoading(false);
+     
+      
+    })
+    .catch(() => {
+      console.log("deu errado")
+    })
+    
+  },[setApiGitHub])
+  
   return (
+    <LoaderContext.Provider value={{loading, setLoading}}>
+
+    
     <UserContext.Provider value={{showMore, setShowMore}}>
       <ThemeProvider theme={theme === 'light' ? ligthTheme : darkTheme}>
         <Router>
-
-        
           <GlobalStyle/> 
           <Container>
-            
-            <NavBar/>
-  
+            <NavBar photo={apiGitHub}/>
                 <button onClick={handleTheme}>Trocar tema</button>
               <Routes>
                 <Route path="/" element={<Home/>}/>
                 <Route path="/Sobre" element={<Sobre/>}/>
                 <Route path="/Habilidades" element={<Habilidades/>}/>
-                <Route path="/Projetos" element={<Projetos/>}/>
+                <Route path="/Projetos" element={<Projetos api={apiGitHub}/>}/>
                 <Route path="/Contatos" element={<Contatos/>}/>
               </Routes>
                 
@@ -54,7 +73,7 @@ function App() {
         </Router>
       </ThemeProvider>
     </UserContext.Provider>
-    
+    </LoaderContext.Provider>
   );
 }
 

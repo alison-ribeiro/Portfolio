@@ -13,7 +13,7 @@ function Habilidades(){
  
   return(
     <Container>
-      <Section title="Habilidade" >
+      <Section title="Habilidade" seeAll={true}>
         <ContainerCards>
           <FlipCard cards={cardsSkils}/> 
         </ContainerCards>       

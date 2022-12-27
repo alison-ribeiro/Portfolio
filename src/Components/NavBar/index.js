@@ -1,15 +1,19 @@
 
-import { useState } from "react";
+import {   useContext, useState } from "react";
 
 import {  NavLink } from "react-router-dom";
 import {Nav, ContainerHeader, Container, Ul, Footer }  from "./styles";
 import { AiOutlineClose } from 'react-icons/ai';
 
-import Perfil from './Perfil.png';
+
 
 import { HiMenu } from 'react-icons/hi';
+import Loader from "../Loader";
+import LoaderContext from "../../Context/Loader";
 
-function NavBar() {
+function NavBar({photo}) {
+  
+  const { loading } = useContext(LoaderContext);
 
   const [menu, setMenu] = useState(false);
   const handleMenu = () => {
@@ -37,14 +41,30 @@ function NavBar() {
       label: 'Contatos',
     },
   ]
+  
   return (
     <>
+     
       <HiMenu onClick={handleMenu}/>
       
       <Nav sideBar={menu}>
         <AiOutlineClose onClick={handleMenu} />
         <ContainerHeader>
-          <img src={Perfil} alt="Foto de perfil"></img>
+          {loading
+          
+          ? 
+          <Loader/>
+          :
+          <><Loader/>
+          <img src={photo[0].owner.avatar_url} alt="Foto de perfil"></img></>
+          
+          }
+        
+          
+        
+
+        
+          
         </ContainerHeader>
 
         <Container>
@@ -63,8 +83,10 @@ function NavBar() {
           <a href="https://github.com/alison-ribeiro" target="blank"> Alison</a>
         </Footer>
       </Nav>
-      
-    </>
+      </>
+     
+    
+    
    
   );
 }

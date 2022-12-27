@@ -4,25 +4,46 @@ export const Container = styled.div`
   display: flex;
   width: 100vw;
   overflow-y: auto;
-  .container{
-    display: flex;
-    flex-wrap: wrap;
+
+  figure{
+    width: 500px;
+    height: 300px;
+    position: relative;
+    padding: 5px;
+    img{
+      opacity: 1;
+      display: block;
+      width: 100%;
+      height: 100%;
+      transition: .5s ease;
+    }
+    .content{
+      width: 100%;
+      height: 100%;
+
+      position: absolute;
+      text-align: center;
+      top: 50%;
+      left: 50%;
+      
+      transform: translate(-50%, -50%);
+      p{
+        color: white;
+      }
+      li{
+        color: white;
+      }
+    }
+    .overlay{
+      opacity: 0;
+    }
+    &:hover img{
+      opacity: .5;
+    }
+    &:hover .overlay{
+      opacity: 1;
+    }
     
   }
-  .cards{
-    width: 200px;
-    font-size: 13px;
-    background-color: black;
-    border: 1px solid white;
-    margin: 1px;
-    padding: 10px;
-    border-radius:20px ;
-
-    p, span{
-      color: white;
-      margin-top: 5px;
-      font-weight: bolder;
-      
-    }
-  }
+  
 `

@@ -1,12 +1,16 @@
 
 import { ContainerPag, ContainerInfo, Container } from "./styles";
 import UserContext from "../../Context/ShowMoreContext";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 
 
-function Section({title, children}){
+function Section({title, children, seeAll}){
 
   const { showMore, setShowMore } = useContext(UserContext);
+  
+  useEffect(() => {
+    setShowMore(3);
+  },[setShowMore])
 
   function toggleSeeAll(){
     if(showMore !== 3 ) 
@@ -22,9 +26,16 @@ function Section({title, children}){
         <h2>{title}</h2>
         <ContainerInfo>
            {children}
-           <div onClick={toggleSeeAll}> 
-            {showMore === 3 ? 'Ver tudo' : 'Esconder'} 
-           </div>
+           {seeAll 
+            ?
+            <div onClick={toggleSeeAll}> 
+              {showMore === 3 ? 'Ver tudo' : 'Esconder'} 
+            </div>
+           
+           :
+            <div></div>
+           }
+           
         </ContainerInfo>
       </Container>
     </ContainerPag>

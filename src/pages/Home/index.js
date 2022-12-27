@@ -5,14 +5,17 @@ function Home(){
 
   const icons = [
     {
+      id: 1,
       href: 'https://www.facebook.com/people/Alison-Alves/100007897695252/',
       icon: <FiFacebook/>,
     },
     {
+      id: 2,
       href: 'https://github.com/alison-ribeiro',
       icon: <FiGithub/>,
     },
     {
+      id: 3,
       href: 'https://www.linkedin.com/in/alison5253/',
       icon: <FiLinkedin/>,
     },
@@ -29,8 +32,8 @@ function Home(){
       </Paragraph>
       <ContainerIcon>
         <ul>
-          {icons.map(({href, icon}) =>(
-            <li>
+          {icons.map(({href, icon,id }) =>(
+            <li key={id}>
               <a href={href} target='blank'>
                 {icon}
               </a>
