@@ -8,7 +8,7 @@ export const Container = styled.div`
     width: 250px;
     height: 350px;
     margin: 0 10px;
-    
+    margin: 25px 0;
      
 `
 export const TheCard = styled.div`

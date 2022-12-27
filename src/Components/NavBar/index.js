@@ -1,6 +1,5 @@
 
 import {   useContext, useState } from "react";
-
 import {  NavLink } from "react-router-dom";
 import {Nav, ContainerHeader, Container, Ul, Footer }  from "./styles";
 import { AiOutlineClose } from 'react-icons/ai';
@@ -55,20 +54,17 @@ function NavBar({photo}) {
           ? 
           <Loader/>
           :
-          <><Loader/>
-          <img src={photo[0].owner.avatar_url} alt="Foto de perfil"></img></>
+          <>
+            <img src={photo[0].owner.avatar_url} alt="Foto de perfil"></img>
+          </>
           
           }
-        
-          
-        
 
-        
-          
         </ContainerHeader>
 
         <Container>
           <Ul>
+            
             {links.map(({path, label}) =>(
               <li key={path}>
                 <NavLink to={path} onClick={handleMenu}>

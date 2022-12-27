@@ -3,6 +3,7 @@ import { devices } from '../Responsive/';
 
 export const GlobalStyle = createGlobalStyle`
 
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital@1&display=swap');
 
 html, body {
 	width: 100vw;
@@ -25,11 +26,15 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup, 
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
+	font-family: 'Nunito';
+	font-size: 16px;
+	font-weight: bold;
 	margin: 0;
 	padding: 0;
 	border: 0;
 	vertical-align: baseline;
 	color: ${props => props.theme.colors.primary};
+	text-transform: uppercase;
 	transition: all .1s linear;
 	::-webkit-scrollbar {
     background-color: #383838;

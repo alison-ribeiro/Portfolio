@@ -3,16 +3,20 @@ import styled from "styled-components";
 export const Container = styled.div`
   
   display: inline-block;
-  position: relative;
-  width: 80px;
-  height: 80px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+ 
+  
 
   div {
+    top: 40%;
+    right: 60%;
     box-sizing: border-box;
     display: block;
     position: absolute;
-    width: 64px;
-    height: 64px;
+    width: 80px;
+    height: 80px;
     margin: 8px;
     border: 8px solid #fff;
     border-radius: 50%;

@@ -4,10 +4,16 @@ export const Container = styled.div`
   display: flex;
   width: 100vw;
   overflow-y: auto;
-
+  .container{
+    display: flex;
+    flex-wrap: wrap;
+    .container-projeto{
+      margin-top: 25px;
+    }
+  }
   figure{
-    width: 500px;
-    height: 300px;
+    width: 300px;
+    height: 200px;
     position: relative;
     padding: 5px;
     img{

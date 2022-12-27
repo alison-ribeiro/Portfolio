@@ -8,7 +8,7 @@ export const Container = styled.div`
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  overflow-y: scroll;
+  overflow-y: auto;
 
 `
 export const ContainerAbout = styled.div`

@@ -1,4 +1,4 @@
-import Card from '../../Components/Cards';
+
 import { Container, ContainerAbout, Photo , About, Cards  } from './styles';
 import { BiDesktop } from 'react-icons/bi';
 import { BsBrush } from 'react-icons/bs';
@@ -45,11 +45,7 @@ function Sobre(){
         
         </ContainerAbout>
       </Section>
-      <Section title={"Serviços"} seeAll={false}>
-          <Cards>
-            <Card info={cards}/>
-          </Cards>
-      </Section>
+      
       
      
       

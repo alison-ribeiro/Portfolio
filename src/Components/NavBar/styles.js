@@ -51,6 +51,7 @@ export const ContainerHeader = styled.div`
   justify-content: center;
   border-bottom: 1px solid ${props => props.theme.colors.secundary};
   width: 100%;
+  position: relative;
   
   img{
     border-radius: 50%;

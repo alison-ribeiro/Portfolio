@@ -2,9 +2,7 @@ import styled from "styled-components";
 
 export const ContainerPag = styled.section`
   display: flex;
-  width: 100%;
-  height: 100vh;
-  margin-top: 20px;
+   margin-top: 20px;
   
   h2{
    position: relative;
@@ -32,5 +30,9 @@ export const Container = styled.div`
 
 export const ContainerInfo = styled.div`
   width: 100%;
+
+  .teste{
+    margin-top: 30px;
+  }
 
 `

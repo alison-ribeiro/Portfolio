@@ -28,12 +28,12 @@ function Section({title, children, seeAll}){
            {children}
            {seeAll 
             ?
-            <div onClick={toggleSeeAll}> 
+            <div className="teste" onClick={toggleSeeAll}> 
               {showMore === 3 ? 'Ver tudo' : 'Esconder'} 
             </div>
            
            :
-            <div></div>
+            <></>
            }
            
         </ContainerInfo>
