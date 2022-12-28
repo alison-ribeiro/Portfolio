@@ -40,44 +40,54 @@ function Contato(){
 
 
   return(
-    <Container>
+    
       
       <Section title={'contato'} seeAll={false}>
-        <form action='https://api.staticforms.xyz/submit' method='post'>
+        <Container>
+          <form action='' method='post'>
           <Input 
             type="text" 
-            placeholder="Digite seu nome"
+            placeholder="Digite seu Nome"
             onChange={(e) => setName(e.target.value)}
             value={name}
           />
           <Input 
             type="text" 
+            placeholder="Digite o Assunto"
+            name="name" 
+            onChange={(e) => setAssunto(e.target.value)}
+            value={assunto}
+          />
+          <Input 
+            type="email" 
             placeholder="Digite seu Email"
             name="name" 
             onChange={(e) => setEmail(e.target.value)}
             value={email}
           />
-          <Input 
-            type="text" 
-            name="name" 
-            onChange={(e) => setAssunto(e.target.value)}
-            value={assunto}
-          />
+          
           <textarea 
             type="text" 
             name="name" 
             onChange={(e) => setMessage(e.target.value)}
             value={message}
+            placeholder="Digite a Menssagem"
           />
           <div onClick={sendEmail}>Submit</div>
         </form>
-        <a href='https://wa.me/5551986168178' target="blank"><AiOutlineWhatsApp/></a>
+        <div className='container-contato'>
+          <a href='https://wa.me/5551986168178' target="blank"><AiOutlineWhatsApp/></a>
+        </div>
+        </Container>
+        
+        
+        
       </Section>
      
 
      
       
-    </Container>
+   
   )
 }
 

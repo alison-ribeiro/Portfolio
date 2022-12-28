@@ -1,9 +1,17 @@
 import styled from "styled-components";
 
-export const ContainerPag = styled.section`
+export const ContainerPag = styled.div`
+  width: 100%;
+`
+
+
+export const Container = styled.div`
   display: flex;
-   margin-top: 20px;
-  
+  margin: 0 auto;
+  flex-direction: column;
+  width: 87%;
+  align-items: flex-start;
+ 
   h2{
    position: relative;
    font-size: 1.8rem;
@@ -20,18 +28,11 @@ export const ContainerPag = styled.section`
     }
   }
 `
-export const Container = styled.div`
-  display: flex;
-  margin: 0 auto;
-  flex-direction: column;
-  width: 72vw;
-  align-items: flex-start;
-`
 
 export const ContainerInfo = styled.div`
   width: 100%;
 
-  .teste{
+  .seeAll{
     margin-top: 30px;
   }
 

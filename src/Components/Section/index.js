@@ -22,13 +22,13 @@ function Section({title, children, seeAll}){
 
   return(
     <ContainerPag>
-      <Container>
+        <Container>
         <h2>{title}</h2>
         <ContainerInfo>
            {children}
            {seeAll 
             ?
-            <div className="teste" onClick={toggleSeeAll}> 
+            <div className="seeAll" onClick={toggleSeeAll}> 
               {showMore === 3 ? 'Ver tudo' : 'Esconder'} 
             </div>
            
@@ -39,6 +39,8 @@ function Section({title, children, seeAll}){
         </ContainerInfo>
       </Container>
     </ContainerPag>
+      
+   
   )
 }
  export default Section;
