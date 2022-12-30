@@ -26,16 +26,14 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup, 
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-	font-family: 'Nunito';
+	font-family: 'Nunito', Arial, Helvetica, sans-serif;
 	font-size: 16px;
-	font-weight: bold;
 	margin: 0;
 	padding: 0;
 	border: 0;
 	vertical-align: baseline;
 	color: ${props => props.theme.colors.primary};
-	text-transform: uppercase;
-	transition: all .1s linear;
+	transition: all .5s linear;
 	::-webkit-scrollbar {
     background-color: #383838;
     width: 8px;
@@ -78,7 +76,7 @@ a{
 }
 
 
-@media ${devices.mobileL} {
+@media ${devices.tablet} {
   html, body{
 		font-size: 20px;
 	}

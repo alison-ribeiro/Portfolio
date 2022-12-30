@@ -1,23 +1,14 @@
 import styled from "styled-components";
 import { devices } from "../../Responsive";
 
-export const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  overflow-y: auto;
 
-`
-export const ContainerAbout = styled.div`
+export const Container = styled.div`
   display: flex;
   margin-top: 25px;
  
 `
 export const Photo = styled.div`
-  width: 100%;
+  flex: 1;
   height: 380px;
   border-radius: 5px;
   background-color: blue;
@@ -33,19 +24,27 @@ export const Photo = styled.div`
 `
 export const About = styled.div`
   display: flex;
+  flex: 1;
   flex-direction: column;
   align-items: flex-start;
   margin-left: 45px;
   h3{
+    font-size: 2rem;
     color: ${props => props.theme.colors.black};
     span{
       color: ${props => props.theme.colors.blue};
+      font-size: inherit;
     }
   }
 
   p{
     margin-top: 15px;
-    font-size: .7rem;
+    font-size: 1.3rem;
+    span{
+      font-weight: bolder;
+      color: black;
+      font-size: inherit;
+    }
   }
   
   h3 + p{
@@ -53,11 +52,4 @@ export const About = styled.div`
   }
   
  
-`
-
-export const Cards = styled.div`
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  
 `

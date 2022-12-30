@@ -2,6 +2,9 @@ import styled from "styled-components";
 
 export const ContainerPag = styled.div`
   width: 100%;
+  height: auto;
+  overflow: hidden;
+  overflow-y: auto;
 `
 
 
@@ -11,11 +14,11 @@ export const Container = styled.div`
   flex-direction: column;
   width: 87%;
   align-items: flex-start;
- 
+  
   h2{
    position: relative;
-   font-size: 1.8rem;
-   margin-top: 30px;
+   font-size: 3rem;
+   margin: 45px 0;
     &::after{
       content: " ";
       height: 4px;
@@ -33,7 +36,15 @@ export const ContainerInfo = styled.div`
   width: 100%;
 
   .seeAll{
-    margin-top: 30px;
+    cursor: pointer;
+    padding: 5px 0;
+    font-size: 2rem;
+    text-align: center;
+    margin: 30px 0;
+    background-color: #a4adf2;
+    :hover{
+      opacity: .5;
+    }
   }
 
 `

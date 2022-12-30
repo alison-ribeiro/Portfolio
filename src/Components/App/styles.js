@@ -4,11 +4,14 @@ import { devices } from "../../Responsive";
 export const Container = styled.div`
   display: flex;
   height: 100vh;
+  width: 100vw;
   position: relative;
   button{
+    all: unset;
     position: absolute;
-    background-color: red;
-    right: 0;
+    font-size: 3rem;
+    right: 10px;
+    cursor: pointer;
   }
   >svg{
     display: none;

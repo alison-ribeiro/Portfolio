@@ -47,8 +47,9 @@ function NavBar({photo}) {
       <HiMenu onClick={handleMenu}/>
       
       <Nav sideBar={menu}>
-        <AiOutlineClose onClick={handleMenu} />
-        <ContainerHeader>
+        
+        <div className="container-head">
+          <AiOutlineClose onClick={handleMenu} />
           {loading
           
           ? 
@@ -60,10 +61,10 @@ function NavBar({photo}) {
           
           }
 
-        </ContainerHeader>
+        </div>
 
-        <Container>
-          <Ul>
+        <div className="container">
+          <ul>
             
             {links.map(({path, label}) =>(
               <li key={path}>
@@ -72,12 +73,12 @@ function NavBar({photo}) {
               </NavLink>
               </li>
             ))}
-          </Ul>
-        </Container>
-        <Footer>
+          </ul>
+        </div>
+        <footer>
           © 2022  
           <a href="https://github.com/alison-ribeiro" target="blank"> Alison</a>
-        </Footer>
+        </footer>
       </Nav>
       </>
      

@@ -1,21 +1,22 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  display: flex;
-  width: 100vw;
-  overflow-y: auto;
-  .container{
     display: flex;
     flex-wrap: wrap;
-    .container-projeto{
-      margin-top: 25px;
+    justify-content: center;
+   
+  .container{
+    margin: 20px 5px;
+    
+    p{
+      margin-bottom: 10px;
+      font-size: 1.5rem;
     }
-  }
-  figure{
-    width: 300px;
+    figure{
+    width: 280px;
     height: 200px;
     position: relative;
-    padding: 5px;
+    border: 1px solid ${props => props.theme.colors.black};
     img{
       opacity: 1;
       display: block;
@@ -24,14 +25,15 @@ export const Container = styled.div`
       transition: .5s ease;
     }
     .content{
+      display: flex;
       width: 100%;
       height: 100%;
-
       position: absolute;
+      justify-content: center;
       text-align: center;
+      align-items: center;
       top: 50%;
       left: 50%;
-      
       transform: translate(-50%, -50%);
       p{
         color: white;
@@ -49,7 +51,12 @@ export const Container = styled.div`
     &:hover .overlay{
       opacity: 1;
     }
+    &:hover .content{
+      background-color: ${props => props.theme.colors.blue};
+    }
     
   }
+  }
+  
   
 `

@@ -15,17 +15,17 @@ function Projetos({api}){
   
   return(
     
-    <Container>
+    <Section title={"Projetos"} seeAll={true}>
      {loading
           
           ? 
           <Loader/>
           :
-          <>
-             <Section title={"Projetos"} seeAll={true}>
-        <div className='container'>
-        {api.slice(0,showMore).map(({id,description, name, html_url}) => (
-          <div className='container-projeto'>
+          
+      
+        <Container>
+         {api.slice(0,showMore).map(({id,description, name, html_url}) => (
+          <div className='container'>
               <p>{name}</p>
              <figure key={(id)}>
                 
@@ -54,15 +54,15 @@ function Projetos({api}){
           }
           
           
-        </div>
-      </Section>
-          </>
+        </Container>
+      
           
-          }
+          
+        }
       
      
         
-    </Container>
+    </Section>
   )
 }
 

@@ -20,6 +20,8 @@ import UserContext from '../../Context/ShowMoreContext';
 import LoaderContext from '../../Context/Loader';
 import axios from 'axios';
 
+import { BsToggleOff, BsToggleOn} from 'react-icons/bs'
+
 function App() {
 
   const [theme, setTheme] = useState("light");
@@ -38,7 +40,7 @@ function App() {
    
     axios.get("https://api.github.com/users/alison-ribeiro/repos")
     .then((resp) => {
-      
+        setLoading(true);
         setApiGitHub(resp.data);
         setLoading(false);
      
@@ -60,7 +62,16 @@ function App() {
           <GlobalStyle/> 
           <Container>
             <NavBar photo={apiGitHub}/>
-                <button onClick={handleTheme}>Trocar tema</button>
+                <button onClick={handleTheme}>
+                  {theme === "light"
+                    ?
+                     <BsToggleOn/>
+                    :
+                     <BsToggleOff/>
+                  }
+                  
+                  
+                </button>
               <Routes>
                 <Route path="/" element={<Home/>}/>
                 <Route path="/Sobre" element={<Sobre/>}/>

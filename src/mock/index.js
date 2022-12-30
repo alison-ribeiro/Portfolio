@@ -1,10 +1,10 @@
 
-import {AiFillHtml5, AiFillGithub} from 'react-icons/ai';
+import {AiFillHtml5, AiFillGithub, AiOutlineWhatsApp, AiOutlineMail} from 'react-icons/ai';
 import {FaCss3Alt, FaReact, FaBootstrap} from 'react-icons/fa';
 import {SiStyledcomponents, SiCplusplus, SiCoursera} from 'react-icons/si';
 import {TbBrandTailwind,TbBrandJavascript} from 'react-icons/tb';
 
-const cardsSkils = [
+export const cardsSkils = [
   {
     title: 'HTML5',
     icon: <AiFillHtml5/>,
@@ -119,4 +119,19 @@ const cardsSkils = [
 
 ]
 
-export default cardsSkils;
+export const contacts = [
+  {
+    id:1,
+    title: "Telefone",
+    contact: "+5551-98616-8178",
+    icon: <AiOutlineWhatsApp/>,
+  },
+  {
+    id:2,
+    title: "Email",
+    contact: "alisondev075@gmail.com",
+    icon: <AiOutlineMail/>,
+  },
+  
+]
+

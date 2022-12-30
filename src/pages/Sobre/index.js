@@ -1,55 +1,34 @@
 
-import { Container, ContainerAbout, Photo , About, Cards  } from './styles';
-import { BiDesktop } from 'react-icons/bi';
-import { BsBrush } from 'react-icons/bs';
-import { DiReact } from 'react-icons/di';
+import { Container, Photo , About } from './styles';
 import Section from '../../Components/Section';
 
 
 function Sobre(){
-  const cards = [
-    {
-      icon: <DiReact/>,
-      title: "Front-End",
-      resume: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem tenetur ratione quod.",
-    },
-    {
-      icon: <BsBrush/>,
-      title: "Web-Designer",
-      resume: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem tenetur ratione quod.",
-    },
-    {
-      icon: <BiDesktop/>,
-      title: "Desenvolvedor Desktop",
-      resume: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem tenetur ratione quod.",
-    },
-  ]
   
   return(
-    <Container>
+    
       <Section title={"Sobre"} seeAll={false}>
-        <ContainerAbout>
+        <Container>
           <Photo>
             <img src='https://webtech.pt/wp-content/uploads/2022/06/O-que-faz-afinal-um-programador-web.png' alt='Foto de codigo'></img>
           </Photo>
           <About>
             <h3>Eu sou <span>Alison Alves</span></h3>
             <p>I am a frontend web developer. I can provide clean code and pixel perfect design. I also make website more & more interactive with web animations.</p>
-            <p>Nome Completo :Alis Ribeiro Alves</p>
-            <p>Idade :23</p>
-            <p>Nacionalidade :Brasileiro</p>
-            <p>Idioma :Português/BR</p>
-            <p>Cidade :Gravatai</p>
-            <p>Freelance :Disponível</p>
+            <p><span>Nome Completo:</span> Alison Ribeiro Alves</p>
+            <p><span>Idade:</span> 23</p>
+            <p><span>Nacionalidade:</span> Brasileiro</p>
+            <p><span>Idioma:</span> Português/BR</p>
+            <p><span>Cidade:</span> Gravatai</p>
+            <p><span>Freelance:</span> Disponível</p>
           </About>
-        
-        </ContainerAbout>
+        </Container>
       </Section>
       
       
      
       
-    </Container>
+    
   )
 }
 

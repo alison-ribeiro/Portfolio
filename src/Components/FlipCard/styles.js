@@ -5,8 +5,8 @@ import styled from "styled-components";
 export const Container = styled.div`
     display: flex;
     position: relative;
-    width: 250px;
-    height: 350px;
+    width: 200px;
+    height: 270px;
     margin: 0 10px;
     margin: 25px 0;
      
@@ -40,27 +40,25 @@ export const TheFront = styled.div`
   .container-header{
     display: grid;
     place-items: center;
-    height: 200px;
+    height: 142px;
     position: relative;
     width: 100%;
     
     .card-header{
-      display: grid;
-      place-items: center;
-      position: relative;
-      background-color: ${props => props.theme.colors.blue};
+      position: absolute;
+      background: rgb(2,0,36);
+      background: linear-gradient(277deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 36%, rgba(0,212,255,1) 100%);
       top: 0;
       border-radius: 20px 20px 0 0;
       width: 100%;
-      height: 100px;
-      z-index: 0;
-       
+      height: 50%;
     }
     .card-header-body{
-      position: relative;
+      position: absolute;
       width: 100%;
-      height: 100px;
-      background-color: ${props => props.theme.colors.blue};
+      height: 50%;
+      background: rgb(2,0,36);
+      
       border-radius:100% 0% 100% 0% / 0% 50% 50% 100%;
       bottom: 0;
       right: 0;
@@ -68,7 +66,7 @@ export const TheFront = styled.div`
     }
     svg{
       color: white;
-      font-size: 100px;
+      font-size: 80px;
       position: absolute;
     }
   }
@@ -77,15 +75,15 @@ export const TheFront = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    h2{
-      font-size: 1rem;
+    h5{
+      font-size: 1.3rem;
     }
     p{
       display: flex;
       text-align: center;
       margin-top: 5px;
       width: 68%;
-      font-size: .6rem;
+      font-size: 1rem;
     }
   }
   

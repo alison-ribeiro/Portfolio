@@ -1,5 +1,3 @@
-
-
 import { Container,TheBack,TheCard,TheFront } from './styles'
 
 import UserContext from "../../Context/ShowMoreContext";
