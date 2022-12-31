@@ -1,12 +1,16 @@
 import styled from "styled-components";
+import { devices } from "../../Responsive";
 
 export const Container = styled.div`
     display: flex;
+    justify-content: space-around;
     flex-wrap: wrap;
-    justify-content: center;
+    
+    
    
   .container{
     margin: 20px 5px;
+    width: auto;
     
     p{
       margin-bottom: 10px;
@@ -57,6 +61,10 @@ export const Container = styled.div`
     
   }
   }
-  
+  @media ${devices.mobileL} {
+    figure{
+      width: 100% !important;
+    }
+  } 
   
 `

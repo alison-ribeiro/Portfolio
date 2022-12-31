@@ -1,4 +1,6 @@
+
 import styled from "styled-components";
+import { devices } from "../../Responsive";
 
 export const Container = styled.div`
   display: flex;
@@ -40,14 +42,16 @@ export const Container = styled.div`
 .container{
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  align-items: center;
+  margin-left: 10px;
   flex: 1;
+ 
 
   .container-icon{
     display: flex;
-    padding: 18px;
-    margin-left: 16px;
-    margin-bottom: 15px;
+    width: 100%;
+    padding: 5px 0 5px 5px;
+    margin: 15px ;
     background-color: ${props => props.theme.colors.bgColor};
   svg{
     margin: auto 0;
@@ -75,7 +79,16 @@ export const Container = styled.div`
   }
  }
 }
- 
+@media ${devices.mobileL} {
+    flex-direction: column;
+    .container{
+      width: 100%;
+      margin-bottom: 80px;
+    }
+    .container-icon{
+      width: 100% !important;
+    }
+  } 
  
 `
 

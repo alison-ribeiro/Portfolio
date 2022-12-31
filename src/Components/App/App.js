@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 import { useEffect, useState } from 'react';
 
@@ -10,17 +10,14 @@ import { GlobalStyle } from '../../GlobalStyle';
 
 import NavBar from '../NavBar';
 import {Container} from './styles';
-import  Home  from '../../pages/Home';
-import  Sobre  from '../../pages/Sobre';
-import  Habilidades  from '../../pages/Habilidades';
-import  Projetos  from '../../pages/Projetos';
-import  Contatos  from '../../pages/Contatos';
+
 
 import UserContext from '../../Context/ShowMoreContext';
 import LoaderContext from '../../Context/Loader';
 import axios from 'axios';
 
 import { BsToggleOff, BsToggleOn} from 'react-icons/bs'
+import AnimatedRoutes from '../AnimatedRouter/AnimatedRoutes';
 
 function App() {
 
@@ -52,6 +49,8 @@ function App() {
     
   },[setApiGitHub])
   
+
+
   return (
     <LoaderContext.Provider value={{loading, setLoading}}>
 
@@ -72,13 +71,7 @@ function App() {
                   
                   
                 </button>
-              <Routes>
-                <Route path="/" element={<Home/>}/>
-                <Route path="/Sobre" element={<Sobre/>}/>
-                <Route path="/Habilidades" element={<Habilidades/>}/>
-                <Route path="/Projetos" element={<Projetos api={apiGitHub}/>}/>
-                <Route path="/Contatos" element={<Contatos/>}/>
-              </Routes>
+             <AnimatedRoutes apii={apiGitHub}/>
                 
           </Container>
         </Router>

@@ -52,13 +52,8 @@ function Projetos({api}){
             ))
           
           }
-          
-          
-        </Container>
-      
-          
-          
-        }
+        </Container>  
+      }
       
      
         

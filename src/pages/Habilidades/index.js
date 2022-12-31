@@ -1,10 +1,7 @@
-
 import FlipCard from '../../Components/FlipCard';
 import Section from '../../Components/Section';
-import { Container, ContainerCards  } from './styles';
+import { Container } from './styles';
 import  {cardsSkils}  from '../../mock';
-
-
 
 
 
@@ -12,13 +9,13 @@ function Habilidades(){
   
  
   return(
-    <Container>
+    
       <Section title="Habilidade" seeAll={true}>
-        <ContainerCards>
+        <Container >
           <FlipCard cards={cardsSkils}/> 
-        </ContainerCards>       
+        </Container>       
       </Section>
-    </Container>
+    
   )
 }
 

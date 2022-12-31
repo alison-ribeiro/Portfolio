@@ -7,13 +7,15 @@ export const Nav = styled.nav`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  position: relative;
   width:35%;
   height: 100%;
   background-color: ${props => props.theme.colors.bgColor};
   border-right: 1px solid ${props => props.theme.colors.secundary};
   overflow: hidden;
   overflow-y: auto;
-  position: relative;
+ 
+  
 
   .container-head {
     display: flex;
@@ -95,7 +97,6 @@ footer{
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: .5rem;
   border-top: 1px solid ${props => props.theme.colors.secundary};
   flex:1;
   padding: 5px 0;
@@ -103,6 +104,10 @@ footer{
     text-decoration: underline;
     font-weight: bolder;
     margin-left: 5px;
+    :hover{
+      color: ${props => props.theme.colors.blue};
+    }
+    
   }
 }
 
@@ -110,11 +115,17 @@ svg{
   display: none;
 }
   @media ${devices.tablet} {
-    width: 72%;
     position: absolute;
+    width: 72%;
     left: ${props => props.sideBar ? '0px' : '-100%'};
     transition: all .8s linear;
-   
+    z-index: 99;
+    
+     p{
+        font-size: 1.5rem !important;
+        
+      }
+    
     svg{
       display: flex;
       position: absolute;
@@ -123,13 +134,12 @@ svg{
       right: 0;
     }
   } 
-
   @media ${devices.mobileL} {
-    
-     
-    
+    p{
+      font-size: 1.1rem !important;
+    }
   } 
-    
+
 `
 
 

@@ -1,5 +1,8 @@
-import { Container, Title,Paragraph, ContainerIcon } from './styles';
+import { Container } from './styles';
 import { FiFacebook, FiLinkedin, FiGithub } from 'react-icons/fi';
+import Section from '../../Components/Section';
+
+import { motion } from 'framer-motion';
 
 function Home(){
 
@@ -21,27 +24,35 @@ function Home(){
     },
   ]
   return(
-    <Container>
-      <Title>
-        Olá, eu sou o <span> Alison Alves</span>
-      </Title>
-      <Paragraph>
-        I am a frontend web developer. I can provide clean code and pixel perfect design.
-         I also make website 
-        more & more interactive with web animations.
-      </Paragraph>
-      <ContainerIcon>
-        <ul>
-          {icons.map(({href, icon,id }) =>(
-            <li key={id}>
-              <a href={href} target='blank'>
-                {icon}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </ContainerIcon>
-    </Container>
+    <Section>
+      <Container as={motion.div}
+          initial={{ top: "-100vh"}}
+          animate={{ top: 0}}
+          exit={{top: "-100vh",  } }
+      
+      >
+        <h1>
+          Olá, eu sou  <span> Alison Alves</span>
+        </h1>
+        <p>
+          I am a frontend web developer. I can provide clean code and pixel perfect design.
+          I also make website 
+          more & more interactive with web animations.
+        </p>
+        <div className='container-icon'>
+          <ul>
+            {icons.map(({href, icon,id }) =>(
+              <li key={id}>
+                <a href={href} target='blank'>
+                  {icon}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </Container>
+    </Section>
+    
   )
 }
 

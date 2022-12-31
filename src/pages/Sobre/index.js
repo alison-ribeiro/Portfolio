@@ -1,18 +1,24 @@
 
-import { Container, Photo , About } from './styles';
+import { Container } from './styles';
 import Section from '../../Components/Section';
+
+import { motion } from 'framer-motion';
 
 
 function Sobre(){
   
   return(
     
-      <Section title={"Sobre"} seeAll={false}>
-        <Container>
-          <Photo>
+      <Section title={"Sobre"} seeAll={false}  >
+        <Container as={motion.div}
+          initial={{ top: "-100vh"}}
+          animate={{ top: 0}}
+          exit={{top: "-100vh", transition: {duration: .1} } }
+        >
+          <div className='photo'>
             <img src='https://webtech.pt/wp-content/uploads/2022/06/O-que-faz-afinal-um-programador-web.png' alt='Foto de codigo'></img>
-          </Photo>
-          <About>
+          </div>
+          <div className='about'>
             <h3>Eu sou <span>Alison Alves</span></h3>
             <p>I am a frontend web developer. I can provide clean code and pixel perfect design. I also make website more & more interactive with web animations.</p>
             <p><span>Nome Completo:</span> Alison Ribeiro Alves</p>
@@ -21,14 +27,11 @@ function Sobre(){
             <p><span>Idioma:</span> Português/BR</p>
             <p><span>Cidade:</span> Gravatai</p>
             <p><span>Freelance:</span> Disponível</p>
-          </About>
+          </div>
         </Container>
       </Section>
-      
-      
      
-      
-    
+     
   )
 }
 

@@ -1,4 +1,4 @@
-import { Container,TheBack,TheCard,TheFront } from './styles'
+import { Container } from './styles'
 
 import UserContext from "../../Context/ShowMoreContext";
 import { useContext } from "react";
@@ -11,20 +11,20 @@ function FlipCard({cards}){
     <>
         {cards.slice(0,showMore).map(({title, icon, resume, list}) =>(
           <Container>
-              <TheCard>
-          <TheFront>
-            <div className='container-header'>
-              <div className="card-header"></div>
-              <div className='card-header-body'></div>
-              {icon}
-            </div>        
-            <div className="card-body">
-              <h5>{title}</h5>
-              <p className="card-text">{resume}</p>
-            </div>
-          
-          </TheFront>
-          <TheBack>
+            <div className='the-card'>
+              <div className='the-front'>
+                <div className='container-header'>
+                  <div className="card-header"></div>
+                  <div className='card-header-body'></div>
+                  {icon}
+                </div>        
+                <div className="card-body">
+                  <h5>{title}</h5>
+                  <p className="card-text">{resume}</p>
+                </div>
+              
+              </div>
+          <div className='the-back'>
             <div className='container-back-header'>
               {icon}
             </div>
@@ -36,8 +36,8 @@ function FlipCard({cards}){
                   ))}
               </ul>
             </div>
-          </TheBack>
-        </TheCard>
+          </div >
+        </div>
       </Container>
           
               

@@ -33,7 +33,6 @@ time, mark, audio, video {
 	border: 0;
 	vertical-align: baseline;
 	color: ${props => props.theme.colors.primary};
-	transition: all .5s linear;
 	::-webkit-scrollbar {
     background-color: #383838;
     width: 8px;

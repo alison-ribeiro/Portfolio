@@ -1,39 +1,40 @@
 import styled from "styled-components";
+import { devices } from "../../Responsive";
 
 
 
 export const Container = styled.div`
     display: flex;
     position: relative;
+    z-index: 0;
     width: 200px;
-    height: 270px;
-    margin: 0 10px;
-    margin: 25px 0;
-     
-`
-export const TheCard = styled.div`
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  transform-style: preserve-3d;
-  transition: all .5s linear;
-  border-radius:20px;
-  box-shadow: 0px 15px 15px 1px rgba(0,255,255,0.7);  
-  &:hover{
-    transform: rotateY(180deg);
-  }
-  
-`
-export const TheFront = styled.div`
-  border:5px solid white;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  background-color: ${props => props.theme.colors.secundary};
-  border-radius:20px;
-  left: 0;
-  top: 0;
+    height: 300px;
+    margin: 25px 15px;
+   
+
+    .the-card{
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      transition: all .5s linear;
+      border-radius:20px;
+      box-shadow: 0px 15px 15px 1px rgba(0,255,255,0.7);  
+      &:hover{
+        transform: rotateY(180deg);
+      }
+    }
+
+    .the-front{
+      border:5px solid white;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      background-color: ${props => props.theme.colors.secundary};
+      border-radius:20px;
+      left: 0;
+      top: 0;
   h5{
     margin-top: 15px;
   }
@@ -68,6 +69,7 @@ export const TheFront = styled.div`
       color: white;
       font-size: 80px;
       position: absolute;
+      
     }
   }
   .card-body{
@@ -86,20 +88,19 @@ export const TheFront = styled.div`
       font-size: 1rem;
     }
   }
-  
-`
-export const TheBack = styled.div`
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  left: 0;
-  top: 0;
-  backface-visibility: hidden;
-  background-color: ${props => props.theme.colors.secundary};
-  border: 5px solid white;
-  border-radius: 20px;
-  color: #333;
-  transform: rotateY(180deg);
+    }
+  .the-back{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    backface-visibility: hidden;
+    background-color: ${props => props.theme.colors.secundary};
+    border: 5px solid white;
+    border-radius: 20px;
+    color: #333;
+    transform: rotateY(180deg);
   
   .container-back-header{
     display: flex;
@@ -113,6 +114,7 @@ export const TheBack = styled.div`
       border: 3px solid white;
       border-radius: 50%;
       padding: 5px;
+      
 
     }
   }
@@ -123,7 +125,7 @@ export const TheBack = styled.div`
   h5{
     margin: 10px 0;
     text-align: center;
-    font-size: .7rem;
+    font-size: 1.100rem;
   }
   ul{
     display: flex;
@@ -132,11 +134,26 @@ export const TheBack = styled.div`
     
     align-items: center;
     li{
-      font-size: .6rem;
+      font-size: .9rem;
       width: 80%;
       margin: 8px 0 0 20px ;
       list-style: disc;
     }
   }
+  }
+  @media ${devices.tablet} {
+    .the-card{
+      width: 280px;
+      height: 320px;
+    }
+  } 
+
+  @media ${devices.mobileL} {
+    margin: 0;
+    margin-bottom: 60px;
+  } 
   
+  
+     
 `
+

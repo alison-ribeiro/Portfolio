@@ -1,7 +1,7 @@
 
 import {   useContext, useState } from "react";
 import {  NavLink } from "react-router-dom";
-import {Nav, ContainerHeader, Container, Ul, Footer }  from "./styles";
+import {Nav}  from "./styles";
 import { AiOutlineClose } from 'react-icons/ai';
 
 
