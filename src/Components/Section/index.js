@@ -1,6 +1,6 @@
 
 import { ContainerPag } from "./styles";
-import UserContext from "../../Context/ShowMoreContext";
+import UserContext from "../../data/ShowMoreContext";
 import { useContext, useEffect } from "react";
 
 

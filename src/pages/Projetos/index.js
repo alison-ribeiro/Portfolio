@@ -2,29 +2,45 @@
 import Section from '../../Components/Section';
 import { Container } from './styles';
 import Loader from '../../Components/Loader/'
-import { useContext } from 'react';
-import LoaderContext from '../../Context/Loader';
-import UserContext from '../../Context/ShowMoreContext';
+import { useEffect, useState } from 'react';
+
+import UserContext from '../../data/ShowMoreContext';
+import axios from 'axios';
 
 
 
-function Projetos({api}){
+function Projetos(){
 
-  const { loading } = useContext(LoaderContext);
-  const { showMore } = useContext(UserContext);
+  const  [loading, setLoading]  = useState(true);
+  const { showMore } = useState(UserContext);
+  const [apiGitHub, setApiGitHub] = useState();
   
+  useEffect(() => {
+   
+    axios.get("https://api.github.com/users/alison-ribeiro/repos")
+    .then((resp) => {
+        setLoading(true);
+        setApiGitHub(resp.data);
+        setLoading(false);
+     
+      
+    })
+    .catch((e) => {
+      console.log("Error:", e)
+    })
+    
+  },[setApiGitHub, setLoading])
+
+ 
   return(
     
     <Section title={"Projetos"} seeAll={true}>
      {loading
-          
           ? 
           <Loader/>
           :
-          
-      
         <Container>
-         {api.slice(0,showMore).map(({id,description, name, html_url}) => (
+         {apiGitHub.slice(0,showMore).map(({id,description, name, html_url}) => (
           <div className='container'>
               <p>{name}</p>
              <figure key={(id)}>

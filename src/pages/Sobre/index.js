@@ -2,19 +2,15 @@
 import { Container } from './styles';
 import Section from '../../Components/Section';
 
-import { motion } from 'framer-motion';
+
 
 
 function Sobre(){
   
   return(
     
-      <Section title={"Sobre"} seeAll={false}  >
-        <Container as={motion.div}
-          initial={{ top: "-100vh"}}
-          animate={{ top: 0}}
-          exit={{top: "-100vh", transition: {duration: .1} } }
-        >
+      <Section title={"Sobre"}>
+        <Container>
           <div className='photo'>
             <img src='https://webtech.pt/wp-content/uploads/2022/06/O-que-faz-afinal-um-programador-web.png' alt='Foto de codigo'></img>
           </div>
@@ -29,9 +25,9 @@ function Sobre(){
             <p><span>Freelance:</span> Disponível</p>
           </div>
         </Container>
-      </Section>
      
      
+     </Section>
   )
 }
 

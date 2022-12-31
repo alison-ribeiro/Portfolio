@@ -2,7 +2,7 @@ import { Container } from './styles';
 import { FiFacebook, FiLinkedin, FiGithub } from 'react-icons/fi';
 import Section from '../../Components/Section';
 
-import { motion } from 'framer-motion';
+
 
 function Home(){
 
@@ -25,12 +25,7 @@ function Home(){
   ]
   return(
     <Section>
-      <Container as={motion.div}
-          initial={{ top: "-100vh"}}
-          animate={{ top: 0}}
-          exit={{top: "-100vh",  } }
-      
-      >
+      <Container>
         <h1>
           Olá, eu sou  <span> Alison Alves</span>
         </h1>
@@ -51,8 +46,7 @@ function Home(){
           </ul>
         </div>
       </Container>
-    </Section>
-    
+      </Section>
   )
 }
 

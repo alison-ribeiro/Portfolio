@@ -1,5 +1,5 @@
 
-import {   useContext, useState } from "react";
+import { useEffect, useState } from "react";
 import {  NavLink } from "react-router-dom";
 import {Nav}  from "./styles";
 import { AiOutlineClose } from 'react-icons/ai';
@@ -8,13 +8,17 @@ import { AiOutlineClose } from 'react-icons/ai';
 
 import { HiMenu } from 'react-icons/hi';
 import Loader from "../Loader";
-import LoaderContext from "../../Context/Loader";
 
-function NavBar({photo}) {
+import axios from "axios";
+
+function NavBar() {
   
-  const { loading } = useContext(LoaderContext);
+  const  [loading, setLoading]  = useState(true);
 
   const [menu, setMenu] = useState(false);
+
+  const [apiGitHub, setApiGitHub] = useState();
+
   const handleMenu = () => {
     menu === true ? setMenu(false) : setMenu(true);
   }
@@ -41,6 +45,24 @@ function NavBar({photo}) {
     },
   ]
   
+
+
+  useEffect(() => {
+   
+    axios.get("https://api.github.com/users/alison-ribeiro/repos")
+    .then((resp) => {
+        setLoading(true);
+        setApiGitHub(resp.data);
+        setLoading(false);
+     
+      
+    })
+    .catch((e) => {
+      console.log("Error:", e)
+    })
+    
+  },[setApiGitHub, setLoading])
+
   return (
     <>
      
@@ -56,7 +78,7 @@ function NavBar({photo}) {
           <Loader/>
           :
           <>
-            <img src={photo[0].owner.avatar_url} alt="Foto de perfil"></img>
+            <img src={apiGitHub[0].owner.avatar_url} alt="Foto de perfil"></img>
           </>
           
           }

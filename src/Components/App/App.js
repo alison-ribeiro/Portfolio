@@ -1,6 +1,6 @@
 import { BrowserRouter as Router } from 'react-router-dom';
 
-import { useEffect, useState } from 'react';
+import {  useState } from 'react';
 
 import { ThemeProvider } from 'styled-components';
 import {ligthTheme, darkTheme} from '../../Theme/';
@@ -12,12 +12,15 @@ import NavBar from '../NavBar';
 import {Container} from './styles';
 
 
-import UserContext from '../../Context/ShowMoreContext';
-import LoaderContext from '../../Context/Loader';
-import axios from 'axios';
+import UserContext from '../../data/ShowMoreContext';
+
+
 
 import { BsToggleOff, BsToggleOn} from 'react-icons/bs'
-import AnimatedRoutes from '../AnimatedRouter/AnimatedRoutes';
+
+
+
+import Rotas from '../../data/routes';
 
 function App() {
 
@@ -25,34 +28,19 @@ function App() {
   const [showMore, setShowMore] = useState(3);
  
 
-  const [loading, setLoading] = useState(true);
+ 
 
-  const [apiGitHub, setApiGitHub] = useState([]);
 
   const handleTheme = () => {
     theme === "light" ? setTheme('dark') : setTheme('light');
   }
-  console.log(apiGitHub);
-  useEffect(() => {
-   
-    axios.get("https://api.github.com/users/alison-ribeiro/repos")
-    .then((resp) => {
-        setLoading(true);
-        setApiGitHub(resp.data);
-        setLoading(false);
-     
-      
-    })
-    .catch(() => {
-      console.log("deu errado")
-    })
-    
-  },[setApiGitHub])
+ 
+ 
   
 
 
   return (
-    <LoaderContext.Provider value={{loading, setLoading}}>
+    
 
     
     <UserContext.Provider value={{showMore, setShowMore}}>
@@ -60,7 +48,7 @@ function App() {
         <Router>
           <GlobalStyle/> 
           <Container>
-            <NavBar photo={apiGitHub}/>
+            <NavBar/>
                 <button onClick={handleTheme}>
                   {theme === "light"
                     ?
@@ -68,16 +56,14 @@ function App() {
                     :
                      <BsToggleOff/>
                   }
-                  
-                  
                 </button>
-             <AnimatedRoutes apii={apiGitHub}/>
+                <Rotas/>
                 
           </Container>
         </Router>
       </ThemeProvider>
     </UserContext.Provider>
-    </LoaderContext.Provider>
+    
   );
 }
 
