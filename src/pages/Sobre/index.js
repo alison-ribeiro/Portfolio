@@ -6,9 +6,38 @@ import Section from '../../Components/Section';
 
 
 function Sobre(){
-  
+
+/*
+  function idade(ano_aniversario, mes_aniversario, dia_aniversario) {
+    const d = new Date,
+        ano_atual = d.getFullYear(),
+        mes_atual = d.getMonth() + 1,
+        dia_atual = d.getDate(),
+
+        ano_aniversario = +ano_aniversario,
+        mes_aniversario = +mes_aniversario,
+        dia_aniversario = +dia_aniversario,
+
+        quantos_anos = ano_atual - ano_aniversario;
+
+    if (mes_atual < mes_aniversario || mes_atual === mes_aniversario && dia_atual < dia_aniversario) {
+        quantos_anos--;
+    }
+
+    return quantos_anos < 0 ? 0 : quantos_anos;
+}
+const idadee = idade(1999, 3, 2)
+*/
+
+
+
+
+
+
+
+
   return(
-    
+
       <Section title={"Sobre"}>
         <Container>
           <div className='photo'>
@@ -25,8 +54,8 @@ function Sobre(){
             <p><span>Freelance:</span> Disponível</p>
           </div>
         </Container>
-     
-     
+
+
      </Section>
   )
 }

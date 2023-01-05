@@ -14,26 +14,27 @@ export const Nav = styled.nav`
   border-right: 1px solid ${props => props.theme.colors.secundary};
   overflow: hidden;
   overflow-y: auto;
- 
-  
+
+
 
   .container-head {
     display: flex;
     justify-content: center;
+    align-items: center;
     border-bottom: 1px solid ${props => props.theme.colors.secundary};
     width: 100%;
     position: relative;
     flex: 4;
-    
+
   img{
     margin: 15px 0;
     border-radius: 50%;
     border: 8px solid ${props => props.theme.colors.secundary};
     background-color: white;
   }
-  
+
 }
-.container{ 
+.container{
   display: grid;
   align-items: center;
   flex:12;
@@ -64,13 +65,13 @@ export const Nav = styled.nav`
         &.active {
           background-color: ${props => props.theme.colors.blue};
         }
-        
+
         &:hover p{
           color: ${props => props.theme.colors.blue};
         }
         &.active p{
           color: white;
-          
+
         }
       }
       &::before {
@@ -83,7 +84,7 @@ export const Nav = styled.nav`
         left: 0;
         top: 0;
         transition: 0.5s ease-out;
-        
+
       }
       &:hover::before{
         width:100%;
@@ -107,7 +108,7 @@ footer{
     :hover{
       color: ${props => props.theme.colors.blue};
     }
-    
+
   }
 }
 
@@ -120,12 +121,12 @@ svg{
     left: ${props => props.sideBar ? '0px' : '-100%'};
     transition: all .8s linear;
     z-index: 99;
-    
+
      p{
         font-size: 1.5rem !important;
-        
+
       }
-    
+
     svg{
       display: flex;
       position: absolute;
@@ -133,12 +134,12 @@ svg{
       top: 10px;
       right: 0;
     }
-  } 
+  }
   @media ${devices.mobileL} {
     p{
       font-size: 1.1rem !important;
     }
-  } 
+  }
 
 `
 

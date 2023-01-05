@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-import { devices } from '../Responsive/';
+import { devices } from '../../Responsive';
 
 export const GlobalStyle = createGlobalStyle`
 
@@ -22,8 +22,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	font-family: 'Nunito', Arial, Helvetica, sans-serif;
@@ -36,7 +36,7 @@ time, mark, audio, video {
 	::-webkit-scrollbar {
     background-color: #383838;
     width: 8px;
-    
+
   }
   ::-webkit-scrollbar-thumb {
       background-color: #6b6b6b;
@@ -48,7 +48,7 @@ time, mark, audio, video {
   }
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }

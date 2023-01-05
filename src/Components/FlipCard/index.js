@@ -1,12 +1,12 @@
 import { Container } from './styles'
 
-import UserContext from "../../data/ShowMoreContext";
+import UserContext from "../../utils/ShowMoreContext";
 import { useContext } from "react";
 
 function FlipCard({cards}){
 
   const { showMore } = useContext(UserContext);
-  
+
   return(
     <>
         {cards.slice(0,showMore).map(({id,title, icon, resume, list}) =>(
@@ -17,12 +17,12 @@ function FlipCard({cards}){
                   <div className="card-header"></div>
                   <div className='card-header-body'></div>
                   {icon}
-                </div>        
+                </div>
                 <div className="card-body">
                   <h5>{title}</h5>
                   <p className="card-text">{resume}</p>
                 </div>
-              
+
               </div>
           <div className='the-back'>
             <div className='container-back-header'>
@@ -39,8 +39,8 @@ function FlipCard({cards}){
           </div >
         </div>
       </Container>
-          
-              
+
+
     ))}
     </>
   );

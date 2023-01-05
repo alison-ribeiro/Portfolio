@@ -5,13 +5,15 @@ export const Container = styled.div`
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    
-    
-   
+
+
+
   .container{
+    
     margin: 20px 5px;
     width: auto;
-    
+
+
     p{
       margin-bottom: 10px;
       font-size: 1.5rem;
@@ -58,13 +60,13 @@ export const Container = styled.div`
     &:hover .content{
       background-color: ${props => props.theme.colors.blue};
     }
-    
+
   }
   }
   @media ${devices.mobileL} {
     figure{
       width: 100% !important;
     }
-  } 
-  
+  }
+
 `

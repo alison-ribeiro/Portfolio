@@ -1,17 +1,18 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  
-  display: inline-block;
+
+  display: flex;
   position: absolute;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   height: 100%;
- 
-  
+
+
+
 
   div {
-    top: 40%;
-    right: 60%;
     box-sizing: border-box;
     display: block;
     position: absolute;
