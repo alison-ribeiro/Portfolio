@@ -3,13 +3,10 @@ import { devices } from '../../styles/responsive';
 
 export const Container = styled.div`
   display: flex;
+  height: 100%;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  
-  margin: auto;
-
-
   h1{
     color: ${props => props.theme.colors.black};
     font-size: 3rem;

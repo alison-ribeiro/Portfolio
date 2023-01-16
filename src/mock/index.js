@@ -36,7 +36,7 @@ export const cardsSkils = [
     resume: 'Bons conhecimento em React 1 anos+ experiência com projetos pessoais.',
     list:[
       'Componentização',
-      'Virtual doom',
+      'Virtual DOM',
       'Redux',
       'Axios',
       'Hooks',

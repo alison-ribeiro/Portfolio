@@ -22,11 +22,8 @@ function Section({title, children, seeAll}){
 
 
   return(
-    <ContainerPag
-    >
-        <div className="container"
-
-        >
+    <ContainerPag>
+        <div className="container">
            {title
               ?
               <h2>{title}</h2>

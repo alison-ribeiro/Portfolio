@@ -23,13 +23,13 @@ export const ContainerPag = styled.div`
     }
 
     .container-info{
-      display: grid;
+      height: 100%;
       width: 100%;
-      margin: auto;
-
+      
 
     .seeAll{
       cursor: pointer;
+      width: 100%;
       padding: 5px 0;
       font-size: 2rem;
       text-align: center;

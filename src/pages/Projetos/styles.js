@@ -6,12 +6,10 @@ export const Container = styled.div`
     justify-content: space-around;
     flex-wrap: wrap;
 
-  .container{
 
+  .container{
     margin: 20px 5px;
     width: auto;
-
-
     p{
       margin-bottom: 10px;
       font-size: 1.5rem;
