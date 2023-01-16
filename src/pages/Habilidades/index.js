@@ -6,16 +6,16 @@ import  {cardsSkils}  from '../../mock';
 
 
 function Habilidades(){
-  
- 
+
+
   return(
-    
-      <Section title="Habilidade" seeAll={true}>
+
+      <Section title="Habilidades" seeAll={true}>
         <Container >
-          <FlipCard cards={cardsSkils}/> 
-        </Container>       
+          <FlipCard cards={cardsSkils}/>
+        </Container>
       </Section>
-    
+
   )
 }
 

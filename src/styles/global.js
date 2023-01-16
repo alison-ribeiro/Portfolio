@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-import { devices } from '../../Responsive';
+import { devices } from './responsive';
 
 export const GlobalStyle = createGlobalStyle`
 

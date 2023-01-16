@@ -1,11 +1,11 @@
 import styled from "styled-components";
-import { devices } from "../../Responsive";
+import { devices } from "../../styles/responsive";
 
 export const ContainerPag = styled.div`
   width: 100%;
   overflow: hidden;
   overflow-y: auto;
-  
+
   .container{
     display: flex;
     margin: 0 auto;
@@ -13,7 +13,7 @@ export const ContainerPag = styled.div`
     width: 80%;
     height: 100%;
     align-items: flex-start;
-  
+
     h2{
       font-size: 3rem;
       margin: 45px 0;
@@ -29,7 +29,8 @@ export const ContainerPag = styled.div`
       font-size: 2rem;
       text-align: center;
       margin: 30px 0;
-      background-color: #a4adf2;
+      color: white;
+      background-color: ${props => props.theme.colors.blue};;
       :hover{
         opacity: .5;
       }
@@ -37,7 +38,7 @@ export const ContainerPag = styled.div`
   }
 
 
-    
+
   }
   @media ${devices.tablet} {
     margin-top: 30px;

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { devices } from '../../Responsive/';
+import { devices } from '../../styles/responsive';
 
 export const Container = styled.div`
   display: flex;
@@ -22,7 +22,7 @@ export const Container = styled.div`
     margin: 30px 0;
     text-align: center;
     width: 85%;
-    
+
   }
   .container-icon{
     ul{
@@ -45,7 +45,7 @@ export const Container = styled.div`
           &:hover svg{
               color: ${props => props.theme.colors.blue};
           }
-        
+
         }
       }
     }
@@ -59,10 +59,10 @@ export const Container = styled.div`
     p{
       font-size: 1.1rem;
       width: 95vw;
-      
+
     }
-   
-  } 
+
+  }
  `
 
 

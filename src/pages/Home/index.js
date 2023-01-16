@@ -30,9 +30,7 @@ function Home(){
           Olá, eu sou  <span> Alison Alves</span>
         </h1>
         <p>
-          I am a frontend web developer. I can provide clean code and pixel perfect design.
-          I also make website 
-          more & more interactive with web animations.
+          Meu foco é desenvolvimento front-end, criando código limpo e responsivo sempre seguindo as boas práticas.
         </p>
         <div className='container-icon'>
           <ul>

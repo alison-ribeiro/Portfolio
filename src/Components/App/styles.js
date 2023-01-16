@@ -1,11 +1,11 @@
 import styled from "styled-components";
-import { devices } from "../../Responsive";
+import { devices } from "../../styles/responsive";
 
 export const Container = styled.div`
   display: flex;
   height: 100vh;
   width: 100vw;
-  
+
   button{
     all: unset;
     position: absolute;
@@ -13,13 +13,13 @@ export const Container = styled.div`
     right: 10px;
     cursor: pointer;
     z-index: 99;
-   
+
   }
   >svg{
     display: none;
   }
-  
-  
+
+
   @media ${devices.tablet} {
     >svg{
       display: flex;
@@ -33,8 +33,8 @@ export const Container = styled.div`
   @media ${devices.mobileL} {
     >svg{
         font-size: 60px;
-     
+
     }
   }
-  
+
 `

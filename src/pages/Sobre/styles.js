@@ -1,11 +1,11 @@
 import styled from "styled-components";
-import { devices } from "../../Responsive";
+import { devices } from "../../styles/responsive";
 
 
 export const Container = styled.div`
   display: flex;
   position: relative;
-  
+
 
  .photo{
     flex: 1;
@@ -35,13 +35,14 @@ export const Container = styled.div`
   p{
     margin-top: 15px;
     font-size: 1.3rem;
+    line-height: 24px;
     span{
       font-weight: bolder;
-      color: black;
+      color: ${props => props.theme.colors.black};
       font-size: inherit;
     }
   }
-  
+
   h3 + p{
     margin: 20px 0;
     }

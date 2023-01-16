@@ -29,12 +29,12 @@ function Projetos(){
 
         <Container>
         <Loader isLoading={loading}/>
-         {data.slice(0,showMore).map(({id,description, name, html_url}) => (
+         {data.slice(0,showMore).map(({id,description, name, html_url,language}) => (
           <div className='container' key={id}>
 
               <p>{name}</p>
              <figure key={(id)}>
-
+              <Loader isLoading={loading}/>
               <img src={`https://raw.githubusercontent.com/alison-ribeiro/${name}/main/backgroud.png`}  alt="imagem backgroud projeto"></img>
 
               <div className='overlay'>
@@ -44,12 +44,8 @@ function Projetos(){
                   <ul>
                     <li>{name}</li>
                     <li>{description}</li>
-                    <li>Linguagem : Javascript dasdasd </li>
-                    <ul >
-                      <li>Tecnologias usadas</li>
-                      <li>Tecnologias usadas</li>
+                    <li>Linguagem : {language} </li>
                       <li><a href={html_url} alt="sda" target='blank'>Botaao</a></li>
-                    </ul>
                   </ul>
                 </div>
               </div>
@@ -60,9 +56,6 @@ function Projetos(){
           }
 
         </Container>
-
-
-
 
     </Section>
   )

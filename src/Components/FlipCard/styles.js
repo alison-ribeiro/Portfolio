@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { devices } from "../../Responsive";
+import { devices } from "../../styles/responsive";
 
 
 
@@ -10,7 +10,7 @@ export const Container = styled.div`
     width: 200px;
     height: 300px;
     margin: 25px 15px;
-   
+
 
     .the-card{
       position: absolute;
@@ -19,7 +19,6 @@ export const Container = styled.div`
       transform-style: preserve-3d;
       transition: all .5s linear;
       border-radius:20px;
-      box-shadow: 0px 15px 15px 1px rgba(0,255,255,0.7);  
       &:hover{
         transform: rotateY(180deg);
       }
@@ -44,7 +43,7 @@ export const Container = styled.div`
     height: 142px;
     position: relative;
     width: 100%;
-    
+
     .card-header{
       position: absolute;
       background: rgb(2,0,36);
@@ -59,17 +58,16 @@ export const Container = styled.div`
       width: 100%;
       height: 50%;
       background: rgb(2,0,36);
-      
       border-radius:100% 0% 100% 0% / 0% 50% 50% 100%;
       bottom: 0;
       right: 0;
-      
+
     }
     svg{
       color: white;
       font-size: 80px;
       position: absolute;
-      
+
     }
   }
   .card-body{
@@ -97,15 +95,16 @@ export const Container = styled.div`
     top: 0;
     backface-visibility: hidden;
     background-color: ${props => props.theme.colors.secundary};
+
     border: 5px solid white;
     border-radius: 20px;
     color: #333;
     transform: rotateY(180deg);
-  
+
   .container-back-header{
     display: flex;
     place-content: center;
-    
+
     svg{
       margin-top: 20px;
       font-size: 75px;
@@ -114,12 +113,10 @@ export const Container = styled.div`
       border: 3px solid white;
       border-radius: 50%;
       padding: 5px;
-      
-
     }
   }
   .scroll{
-    height: 180px;
+    height: 135px;
     overflow-y: auto;
   }
   h5{
@@ -131,7 +128,7 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
     width: 100%;
-    
+
     align-items: center;
     li{
       font-size: .9rem;
@@ -146,14 +143,14 @@ export const Container = styled.div`
       width: 280px;
       height: 320px;
     }
-  } 
+  }
 
   @media ${devices.mobileL} {
     margin: 0;
     margin-bottom: 60px;
-  } 
-  
-  
-     
+  }
+
+
+
 `
 

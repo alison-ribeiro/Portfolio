@@ -1,15 +1,13 @@
 import styled from "styled-components";
-import { devices } from "../../Responsive";
+import { devices } from "../../styles/responsive";
 
 export const Container = styled.div`
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-
-
-
-  .container{
     
+  .container{
+
     margin: 20px 5px;
     width: auto;
 

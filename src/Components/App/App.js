@@ -1,30 +1,25 @@
 import { BrowserRouter as Router } from 'react-router-dom';
-
+import Rotas from "../../utils/routes";
 import {  useState } from 'react';
 
 import { ThemeProvider } from 'styled-components';
-import {ligthTheme, darkTheme} from '../styles/themes/default';
-import { GlobalStyle } from '../styles/global';
-
-
+import { GlobalStyle } from '../../styles/global';
+import {ligthTheme, darkTheme} from '../../styles/themes/default';
 
 import NavBar from '../NavBar';
 import {Container} from './styles';
 
-
 import UserContext from '../../utils/ShowMoreContext';
-
 
 
 import { BsToggleOff, BsToggleOn} from 'react-icons/bs'
 
 
 
-import Rotas from "../../utils/routes";
 
 function App() {
 
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme]       = useState("light");
   const [showMore, setShowMore] = useState(3);
 
 
@@ -38,7 +33,7 @@ function App() {
   return (
 
     <UserContext.Provider value={{showMore, setShowMore}}>
-      <ThemeProvider theme={theme === 'light' ? ligthTheme : darkTheme}>
+      <ThemeProvider theme={theme === 'dark' ? ligthTheme : darkTheme}>
         <Router>
           <GlobalStyle/>
           <Container>
