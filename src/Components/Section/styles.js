@@ -6,6 +6,7 @@ export const ContainerPag = styled.div`
   overflow: hidden;
   overflow-y: auto;
 
+
   .container{
     display: flex;
     margin: 0 auto;
@@ -14,6 +15,7 @@ export const ContainerPag = styled.div`
     height: 100%;
     align-items: flex-start;
 
+
     h2{
       font-size: 3rem;
       margin: 45px 0;
@@ -21,7 +23,10 @@ export const ContainerPag = styled.div`
     }
 
     .container-info{
+      display: grid;
       width: 100%;
+      margin: auto;
+
 
     .seeAll{
       cursor: pointer;

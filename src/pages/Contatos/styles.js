@@ -4,6 +4,7 @@ import { devices } from "../../styles/responsive";
 
 export const Container = styled.div`
   display: flex;
+  
 
  form{
   display: flex;
@@ -63,6 +64,7 @@ export const Container = styled.div`
   align-items: center;
   margin-left: 10px;
   flex: 1;
+
 
 
   .container-icon{

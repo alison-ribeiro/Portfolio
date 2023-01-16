@@ -5,7 +5,7 @@ export const Container = styled.div`
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    
+
   .container{
 
     margin: 20px 5px;
@@ -44,6 +44,19 @@ export const Container = styled.div`
       }
       li{
         color: white;
+      }
+      .button{
+        margin-top: 15px;
+        a{
+          border: 1px solid white;
+          border-radius: 10px;
+          padding: 5px;
+          color: ${props => props.theme.colors.white};
+          background-color: ${props => props.theme.colors.black};
+          :hover{
+            opacity: .7;
+          }
+        }
       }
     }
     .overlay{

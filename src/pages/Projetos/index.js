@@ -45,7 +45,7 @@ function Projetos(){
                     <li>{name}</li>
                     <li>{description}</li>
                     <li>Linguagem : {language} </li>
-                      <li><a href={html_url} alt="sda" target='blank'>Botaao</a></li>
+                    <li className='button'><a href={html_url} alt="sda" target='blank'>Ir para Repositório </a></li>
                   </ul>
                 </div>
               </div>

@@ -117,7 +117,7 @@ function Contato(){
                 type="text"
                 onChange={handleMessageChange}
                 value={message}
-                placeholder="*Digite a Menssagem"
+                placeholder="*Digite a Mensagem"
                 rows={5}
                 error={getErrorMessageByFieldName('message')}
               />

@@ -6,8 +6,9 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  position: relative;
+  
+  margin: auto;
+
 
   h1{
     color: ${props => props.theme.colors.black};
