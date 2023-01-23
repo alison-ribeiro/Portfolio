@@ -25,7 +25,7 @@ function Projetos(){
               <p>{name}</p>
              <figure key={(id)}>
              <Loader isLoading={loading}/>
-               <img src={`https://raw.githubusercontent.com/alison-ribeiro/${name}/main/backgroud.png`}  alt="imagem backgroud projeto"></img>
+               <img src={`https://raw.githubusercontent.com/alison-ribeiro/${name}/main/background.png`}  alt="imagem backgroud projeto"></img>
               <div className='overlay'>
                 <div className='content'>
                   <ul>
