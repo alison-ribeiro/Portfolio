@@ -5,7 +5,6 @@ import Section from '../../Components/Section';
 
 
 function Home(){
-
   const icons = [
     {
       id: 1,
@@ -24,7 +23,7 @@ function Home(){
     },
   ]
   return(
-    <Section>
+    <Section >
       <Container>
         <h1>
           Olá, eu sou  <span> Alison Alves</span>

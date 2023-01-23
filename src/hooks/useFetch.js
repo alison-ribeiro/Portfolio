@@ -9,9 +9,11 @@ export function useFetch(path){
     axios.get(`https://api.github.com/users/alison-ribeiro${path}`)
     .then(response => {
       setData(response.data);
+      
     })
     .finally(() => {
       setLoading(false);
+
     })
   },[path])
   return {data, loading}

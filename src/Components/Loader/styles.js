@@ -8,9 +8,7 @@ export const Container = styled.div`
   align-items: center;
   width: 100%;
   height: 100%;
-
-
-
+  z-index:99;
 
   div {
     box-sizing: border-box;

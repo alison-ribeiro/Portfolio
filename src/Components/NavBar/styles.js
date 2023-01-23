@@ -1,22 +1,24 @@
 import styled from "styled-components";
+
 import { devices } from "../../styles/responsive";
 
 
-
-export const Nav = styled.nav`
+export const Container = styled.nav`
+  position: fixed;
+  width: 400px;
+  left: 0;
+  top: 0;
+`
+export const Nav = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  position: relative;
-  width:35%;
+  position: fixed;
+  width:400px;
   height: 100%;
+  top: 0;
+  left: 0;
   background-color: ${props => props.theme.colors.bgColor};
   border-right: 1px solid ${props => props.theme.colors.secundary};
-  overflow: hidden;
-  overflow-y: auto;
-
-
-
   .container-head {
     display: flex;
     justify-content: center;
@@ -24,31 +26,29 @@ export const Nav = styled.nav`
     border-bottom: 1px solid ${props => props.theme.colors.secundary};
     width: 100%;
     position: relative;
-    flex: 4;
-
-  img{
-    margin: 15px 0;
-    border-radius: 50%;
-    border: 8px solid ${props => props.theme.colors.secundary};
-    background-color: white;
-  }
-
+    img{
+      margin: 15px 0;
+      border-radius: 50%;
+      border: 8px solid ${props => props.theme.colors.secundary};
+    }
 }
-.container{
-  display: grid;
-  align-items: center;
-  flex:12;
-  ul{
+.container-body{
   display: flex;
+  height: 100%;
   flex-direction: column;
-  justify-content: space-around;
-  height: 70%;
-    li{
+  justify-content: space-between;
+  ul{
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+   li{
       padding: 20px 0;
       font-weight: bold;
       width: 100%;
       position: relative;
-
+      margin: 10px 0;
       >a{
         display: flex;
         position: absolute;
@@ -71,7 +71,6 @@ export const Nav = styled.nav`
         }
         &.active p{
           color: white;
-
         }
       }
       &::before {
@@ -95,12 +94,10 @@ export const Nav = styled.nav`
 }
 
 footer{
-  display: flex;
-  justify-content: center;
-  align-items: center;
   border-top: 1px solid ${props => props.theme.colors.secundary};
-  flex:1;
-  padding: 5px 0;
+  width: 100%;
+  text-align: center;
+  padding: 10px 0;
   >a{
     text-decoration: underline;
     font-weight: bolder;
@@ -108,36 +105,38 @@ footer{
     :hover{
       color: ${props => props.theme.colors.blue};
     }
-
   }
 }
-
 svg{
-  display: none;
+    display: none;
+    position: absolute;
+    font-size: 60px;
+    z-index: 99;
+    top: 0;
+    right: 0;
 }
   @media ${devices.tablet} {
-    position: absolute;
-    width: 72%;
     left: ${props => props.sideBar ? '0px' : '-100%'};
     transition: all .8s linear;
     z-index: 99;
-
+    width: 80%;
+    .container-head{
+      svg{
+        display: flex;
+      }
+    }
+    .container-body{
+      li{
+        margin: 23px 0 !important;
+      }
+    }
      p{
         font-size: 1.5rem !important;
-
       }
-
-    svg{
-      display: flex;
-      position: absolute;
-      font-size: 50px;
-      top: 10px;
-      right: 0;
-    }
-  }
+   }
   @media ${devices.mobileL} {
     p{
-      font-size: 1.1rem !important;
+      font-size: 1.3rem !important;
     }
   }
 

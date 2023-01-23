@@ -38,8 +38,6 @@ return(
             <p><span>Freelance:</span> Disponível</p>
           </div>
         </Container>
-
-
      </Section>
   )
 }

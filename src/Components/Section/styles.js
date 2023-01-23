@@ -1,39 +1,29 @@
 import styled from "styled-components";
 import { devices } from "../../styles/responsive";
 
-export const ContainerPag = styled.div`
-  width: 100%;
-  overflow: hidden;
-  overflow-y: auto;
+export const Container = styled.div`
+  display: flex;
+  position: absolute;
+  width: calc(100vw - 400px);
+  height: 100%;
+  right: 0;
 
 
-  .container{
-    display: flex;
-    margin: 0 auto;
-    flex-direction: column;
-    width: 80%;
-    height: 100%;
-    align-items: flex-start;
-
-
+  .container-info{
+    width: 90%;
+    margin: auto;
     h2{
+      display: inline-flex;
       font-size: 3rem;
-      margin: 45px 0;
+      margin: 50px 0 15px;
       border-bottom: 4px solid ${props => props.theme.colors.blue};
     }
-
-    .container-info{
-      height: 100%;
-      width: 100%;
-      
-
     .seeAll{
       cursor: pointer;
       width: 100%;
       padding: 5px 0;
       font-size: 2rem;
       text-align: center;
-      margin: 30px 0;
       color: white;
       background-color: ${props => props.theme.colors.blue};;
       :hover{
@@ -41,15 +31,14 @@ export const ContainerPag = styled.div`
       }
     }
   }
-
-
-
-  }
   @media ${devices.tablet} {
-    margin-top: 30px;
-   .seeAll{
-      margin-bottom: 100px !important;
-   }
+    width: 100%;
+    h2{
+      font-size: 2.5rem;
+    }
+    .seeAll{
+      margin-bottom: 56px;
+    }
   }
 `
 

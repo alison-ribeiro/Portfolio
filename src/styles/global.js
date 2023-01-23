@@ -3,17 +3,7 @@ import { devices } from './responsive';
 
 export const GlobalStyle = createGlobalStyle`
 
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital@1&display=swap');
-
-html, body {
-	width: 100vw;
-	height: 100vh;
-	font-size: 32px;
-	overflow: hidden;
-	background-color: ${props => props.theme.colors.bgColorSecundary};
-
-}
-  html, body, div, span, applet, object, iframe,
+html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
@@ -32,6 +22,7 @@ time, mark, audio, video {
 	padding: 0;
 	border: 0;
 	vertical-align: baseline;
+  scroll-behavior: smooth;
 	color: ${props => props.theme.colors.primary};
 	::-webkit-scrollbar {
     background-color: #383838;
@@ -73,7 +64,14 @@ table {
 a{
 	text-decoration: none;
 }
-
+html, body {
+	background-color: ${props => props.theme.colors.bgColorSecundary};
+  overflow-x: hidden;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  box-sizing: border-box;
+}
 
 @media ${devices.tablet} {
   html, body{

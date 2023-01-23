@@ -3,10 +3,9 @@ import { devices } from "../../styles/responsive";
 
 export const Container = styled.div`
     display: flex;
+    position: relative;
     justify-content: space-around;
     flex-wrap: wrap;
-
-
   .container{
     margin: 20px 5px;
     width: auto;
@@ -37,6 +36,7 @@ export const Container = styled.div`
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
+      z-index: 100;
       p{
         color: white;
       }
@@ -73,9 +73,14 @@ export const Container = styled.div`
   }
   }
   @media ${devices.mobileL} {
-    figure{
-      width: 100% !important;
+    .container{
+      margin: 30px 0;
+      figure{
+        width: 100% !important;
+      }
+
     }
+
   }
 
 `

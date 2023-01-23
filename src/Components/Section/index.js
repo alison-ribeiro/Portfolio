@@ -1,11 +1,11 @@
 
-import { ContainerPag } from "./styles";
+import { Container } from "./styles";
 import UserContext from "../../utils/ShowMoreContext";
 import { useContext, useEffect } from "react";
 
 
 
-function Section({title, children, seeAll}){
+function Section({title, children, seeAll, align}){
 
   const { showMore, setShowMore } = useContext(UserContext);
 
@@ -22,30 +22,21 @@ function Section({title, children, seeAll}){
 
 
   return(
-    <ContainerPag>
-        <div className="container">
-           {title
-              ?
-              <h2>{title}</h2>
-              :
-              <></>
-            }
+    <Container  align={align}>
           <div className="container-info">
+            {title &&(
+              <h2>{title}</h2>
+              )
+            }
             {children}
-            {seeAll
-              ?
+            {seeAll && (
               <div className="seeAll" onClick={toggleSeeAll}>
                 {showMore === 3 ? 'Ver tudo' : 'Esconder'}
               </div>
-
-            :
-              <></>
+              )
             }
           </div>
-      </div>
-    </ContainerPag>
-
-
+    </Container>
   )
 }
  export default Section;

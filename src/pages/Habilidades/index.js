@@ -3,14 +3,10 @@ import Section from '../../Components/Section';
 import { Container } from './styles';
 import  {cardsSkils}  from '../../mock';
 
-
-
 function Habilidades(){
-
-
   return(
 
-      <Section title="Habilidades" seeAll={true}>
+      <Section title="Habilidades" seeAll={true} >
         <Container >
           <FlipCard cards={cardsSkils}/>
         </Container>

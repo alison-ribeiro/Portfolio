@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 import {  NavLink } from "react-router-dom";
-import {Nav}  from "./styles";
+import {Container, Nav}  from "./styles";
 import { AiOutlineClose } from 'react-icons/ai';
 
 
@@ -9,6 +9,7 @@ import { AiOutlineClose } from 'react-icons/ai';
 import { HiMenu } from 'react-icons/hi';
 import Loader from "../Loader";
 import { useFetch } from "../../hooks/useFetch";
+
 
 
 
@@ -48,20 +49,17 @@ function NavBar() {
 
   return (
     <>
-
-      <HiMenu onClick={handleMenu}/>
-
-      <Nav sideBar={menu}>
-
+    <Container/>
+    <HiMenu onClick={handleMenu}/>
+      <Nav sideBar={menu} >
         <div className="container-head">
           <AiOutlineClose onClick={handleMenu} />
           <Loader isLoading={loading}/>
           <img src={data.avatar_url} alt="Foto de perfil"></img>
         </div>
 
-        <div className="container">
+        <div className="container-body">
           <ul>
-
             {links.map(({path, label}) =>(
               <li key={path}>
                 <NavLink to={path} onClick={handleMenu}>
@@ -69,14 +67,18 @@ function NavBar() {
               </NavLink>
               </li>
             ))}
+
           </ul>
+          <footer>
+              © 2022
+              <a href="https://github.com/alison-ribeiro" target="blank"> Alison</a>
+            </footer>
         </div>
-        <footer>
-          © 2022
-          <a href="https://github.com/alison-ribeiro" target="blank"> Alison</a>
-        </footer>
       </Nav>
-      </>
+    </>
+
+
+
 
 
 

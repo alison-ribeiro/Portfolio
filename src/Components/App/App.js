@@ -5,9 +5,9 @@ import {  useState } from 'react';
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyle } from '../../styles/global';
 import {ligthTheme, darkTheme} from '../../styles/themes/default';
+import {Container} from './styles';
 
 import NavBar from '../NavBar';
-import {Container} from './styles';
 
 import UserContext from '../../utils/ShowMoreContext';
 
@@ -15,27 +15,19 @@ import UserContext from '../../utils/ShowMoreContext';
 import { BsToggleOff, BsToggleOn} from 'react-icons/bs'
 
 
-
-
 function App() {
-
   const [theme, setTheme]       = useState("light");
-  const [showMore, setShowMore] = useState(3);
+  const [showMore, setShowMore] = useState();
 
-
-
-
-
-  const handleTheme = () => {
+  function handleTheme() {
     theme === "light" ? setTheme('dark') : setTheme('light');
   }
-
   return (
 
     <UserContext.Provider value={{showMore, setShowMore}}>
       <ThemeProvider theme={theme === 'dark' ? ligthTheme : darkTheme}>
+        <GlobalStyle/>
         <Router>
-          <GlobalStyle/>
           <Container>
             <NavBar/>
                 <button onClick={handleTheme}>
@@ -47,7 +39,6 @@ function App() {
                   }
                 </button>
                 <Rotas/>
-
           </Container>
         </Router>
       </ThemeProvider>

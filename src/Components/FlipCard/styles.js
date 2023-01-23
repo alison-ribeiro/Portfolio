@@ -7,10 +7,10 @@ export const Container = styled.div`
     display: flex;
     position: relative;
     z-index: 0;
-    width: 200px;
+    width: 250px;
     height: 300px;
     margin: 25px 15px;
-
+    justify-content: center;
 
     .the-card{
       position: absolute;

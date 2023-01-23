@@ -1,9 +1,7 @@
 import { Container } from "./styles";
 
 function Loader({isLoading}){
-  if(!isLoading){
-    return null
-  }
+  if(isLoading)
   return(
       <Container>
         <div></div>

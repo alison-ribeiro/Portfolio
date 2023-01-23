@@ -1,4 +1,4 @@
-import {  useState } from 'react';
+import {   useState } from 'react';
 import Section from '../../Components/Section';
 import { Container, FormGroup, Input, Textarea } from './styles';
 import emailjs from '@emailjs/browser'
@@ -6,6 +6,11 @@ import { contacts } from '../../mock';
 import Loader from '../../Components/Loader';
 import isEmailValid from '../../utils/isEmailValid';
 import useErrors from '../../hooks/useErrors';
+import Toast from '../../Components/Toast';
+import useToastMessage from '../../hooks/useToastMessage';
+
+import { IoMdCheckmarkCircleOutline } from "react-icons/io";
+import { BiError } from "react-icons/bi";
 
 function Contato(){
   const [name, setName]       = useState('');
@@ -14,9 +19,14 @@ function Contato(){
   const [message, setMessage] = useState('');
   const [loading, setLoading] = useState(false);
 
+
+  const {toastMessage, handleToastMessage} = useToastMessage();
+
+
   const {setError, removeError, getErrorMessageByFieldName, errors} = useErrors();
 
   const isFormValid = (name && email && message && errors.length === 0);
+
 
   function handleSubmit(event){
     event.preventDefault();
@@ -30,6 +40,7 @@ function Contato(){
       subject: assunto
     }
 
+
     emailjs.send("service_c5rnf9p","template_hlc170k",templateParams,"MTv2tdrZId1-7m-Jz")
       .then(() => {
       setName('');
@@ -37,9 +48,16 @@ function Contato(){
       setAssunto('');
       setMessage('');
       setLoading(false);
+      handleToastChange('success')
 
     },(err) => {
-      console.log(" Error: ", err)
+      setName('');
+      setEmail('');
+      setAssunto('');
+      setMessage('');
+      handleToastChange('err');
+      setLoading(false);
+      console.log(" Error: ", err);
     })
   }
   function handleNameChange(event){
@@ -76,13 +94,18 @@ function Contato(){
     }
 
   }
+  function handleToastChange(type){
+    type === 'success' && handleToastMessage('green', 'Email enviado', true,<IoMdCheckmarkCircleOutline/>, 3000)
+    type === 'err' && handleToastMessage('red', 'Erro ao enviar o email', true,<BiError/>, 3000)
+  }
 
   return(
       <Section title={'Contatos'} seeAll={false}>
-        <Loader isLoading={loading}/>
-        <Container >
 
+        <Container >
             <form method='post' onSubmit={handleSubmit}>
+              <Loader isLoading={loading}/>
+              {toastMessage.isLoading && <Toast message={toastMessage.message} bg={toastMessage.bg} icon={toastMessage.icon}/>}
               <FormGroup >
                 <Input
                   type="text"
@@ -91,7 +114,9 @@ function Contato(){
                   value={name}
                   error={getErrorMessageByFieldName('name')}
                 />
-                <span>{getErrorMessageByFieldName('name')}</span>
+                {getErrorMessageByFieldName('name') &&(
+                  <span>{getErrorMessageByFieldName('name')}</span>
+                )}
               </FormGroup>
               <FormGroup>
                 <Input
@@ -109,7 +134,10 @@ function Contato(){
                   value={email}
                   error={getErrorMessageByFieldName('email')}
                 />
-                <span>{getErrorMessageByFieldName('email')}</span>
+                {getErrorMessageByFieldName('email') &&(
+                  <span>{getErrorMessageByFieldName('email')}</span>
+                )}
+
               </FormGroup>
 
             <FormGroup>
@@ -128,25 +156,13 @@ function Contato(){
             <button type="submit" disabled={!isFormValid}>Enviar Email</button>
           </form>
           <div className='container'>
-            {contacts.map(({id,title,contact, icon}) => (
-              <div className='container-icon' key={id}>
-                {title === "Email"
-                  ?
-                    <a href="https://mail.google.com/mail/u/1/#inbox?compose=CllgCJfqchWScwjptrwqxqGQVtGnHKFsvtZFdnzgsScCPBmHLQGnKpwHvlKwBvBMJpTLBTdkBqV" target="blank">{icon}</a>
-                  :
-                  <a href='https://wa.me/5551986168178' target="blank">{icon}</a>
-                }
-
-              <div className='container-info'>
-                <p>{title}</p>
-                {title === "Email"
-                  ?
-                    <a href="https://mail.google.com/mail/u/1/#inbox?compose=CllgCJfqchWScwjptrwqxqGQVtGnHKFsvtZFdnzgsScCPBmHLQGnKpwHvlKwBvBMJpTLBTdkBqV" target="blank">{contact}</a>
-                  :
-                    <a href={`tel:${contact}`} target="blank">{contact}</a>
-                }
-
-              </div>
+            {contacts.map(({id,title,contact, icon, link}) => (
+              <div className='container-contacts' key={id}>
+                <a href={link} target="blank">{icon}</a>
+                <div className='contacts'>
+                      <p>{title}</p>
+                      <a href={link} target="blank">{contact}</a>
+                </div>
             </div>
             ))}
           </div>

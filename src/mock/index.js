@@ -138,12 +138,14 @@ export const contacts = [
     title: "Telefone",
     contact: "+5551-98616-8178",
     icon: <AiOutlineWhatsApp/>,
+    link: "https://wa.me/5551986168178"
   },
   {
     id:2,
     title: "Email",
     contact: "alisondev075@gmail.com",
     icon: <AiOutlineMail/>,
+    link: "https://mail.google.com/mail/u/1/#inbox?compose=CllgCJfqchWScwjptrwqxqGQVtGnHKFsvtZFdnzgsScCPBmHLQGnKpwHvlKwBvBMJpTLBTdkBqV"
   },
 
 ]

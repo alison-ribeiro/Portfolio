@@ -6,12 +6,10 @@ export const Container = styled.div`
   display: flex;
   position: relative;
 
-
  .photo{
     flex: 1;
     height: 380px;
     border-radius: 5px;
-    background-color: blue;
     img{
       width: 100%;
       height: 100%;
@@ -53,6 +51,7 @@ export const Container = styled.div`
       margin: 25px 0;
       p{
         margin-top: 30px;
+        line-height: 35px;
       }
     }
 
