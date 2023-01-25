@@ -21,7 +21,9 @@ function Projetos(){
         <Container>
         <Loader isLoading={loading}/>
          {data.slice(0,showMore).map(({id,description, name, html_url,language}) => (
-          <div className='container' key={id}>
+           <>
+            {name === 'alison-ribeiro' ? <></> :
+           <div className='container' key={id}>
               <p>{name}</p>
              <figure key={(id)}>
              <Loader isLoading={loading}/>
@@ -38,6 +40,9 @@ function Projetos(){
               </div>
            </figure>
            </div>
+          }
+          </>
+
             ))
           }
         </Container>
