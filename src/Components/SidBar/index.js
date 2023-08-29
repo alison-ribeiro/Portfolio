@@ -13,7 +13,7 @@ import { useFetch } from "../../hooks/useFetch";
 
 
 
-function NavBar() {
+function SidBar() {
   const [menu, setMenu]           = useState(false);
   const path="";
 
@@ -76,13 +76,6 @@ function NavBar() {
         </div>
       </Nav>
     </>
-
-
-
-
-
-
-
   );
 }
- export default NavBar;
+ export default SidBar;

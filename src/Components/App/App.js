@@ -7,7 +7,7 @@ import { GlobalStyle } from '../../styles/global';
 import {ligthTheme, darkTheme} from '../../styles/themes/default';
 import {Container} from './styles';
 
-import NavBar from '../NavBar';
+import SidBar from '../SidBar';
 
 import UserContext from '../../utils/ShowMoreContext';
 
@@ -29,8 +29,9 @@ function App() {
         <GlobalStyle/>
         <Router>
           <Container>
-            <NavBar/>
-                <button onClick={handleTheme}>
+            <SidBar/>
+              <div className='teste'> 
+                <button onClick={handleTheme} className='toogle'>
                   {theme === "light"
                     ?
                      <BsToggleOn/>
@@ -38,6 +39,8 @@ function App() {
                      <BsToggleOff/>
                   }
                 </button>
+              </div>
+                
                 <Rotas/>
           </Container>
         </Router>

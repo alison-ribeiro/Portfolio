@@ -5,6 +5,7 @@ import Section from '../../Components/Section';
 
 
 
+
 function Sobre(){
 
   function getAge(dateString) {
@@ -23,6 +24,7 @@ function Sobre(){
 return(
 
       <Section title={"Sobre"}>
+        
         <Container>
           <div className='photo'>
             <img src='https://webtech.pt/wp-content/uploads/2022/06/O-que-faz-afinal-um-programador-web.png' alt='Foto de codigo'></img>

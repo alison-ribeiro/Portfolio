@@ -7,7 +7,7 @@ export const Container = styled.div`
   width: calc(100vw - 400px);
   height: 100%;
   right: 0;
-
+  
 
   .container-info{
     width: 90%;

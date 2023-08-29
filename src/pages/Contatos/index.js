@@ -1,4 +1,4 @@
-import {   useState } from 'react';
+import {   useRef, useState } from 'react';
 import Section from '../../Components/Section';
 import { Container, FormGroup, Input, Textarea } from './styles';
 import emailjs from '@emailjs/browser'
@@ -11,6 +11,8 @@ import useToastMessage from '../../hooks/useToastMessage';
 
 import { IoMdCheckmarkCircleOutline } from "react-icons/io";
 import { BiError } from "react-icons/bi";
+import { AiOutlineCopy } from 'react-icons/ai';
+import Contacts from './Components/contacts';
 
 function Contato(){
   const [name, setName]       = useState('');
@@ -26,7 +28,7 @@ function Contato(){
   const {setError, removeError, getErrorMessageByFieldName, errors} = useErrors();
 
   const isFormValid = (name && email && message && errors.length === 0);
-
+  const contactRef = useRef(null);
 
   function handleSubmit(event){
     event.preventDefault();
@@ -99,6 +101,11 @@ function Contato(){
     type === 'err' && handleToastMessage('red', 'Erro ao enviar o email', true,<BiError/>, 3000)
   }
 
+  function handleCopy(content){
+    navigator.clipboard.writeText(content);
+
+  }
+
   return(
       <Section title={'Contatos'} seeAll={false}>
 
@@ -155,17 +162,7 @@ function Contato(){
 
             <button type="submit" disabled={!isFormValid}>Enviar Email</button>
           </form>
-          <div className='container'>
-            {contacts.map(({id,title,contact, icon, link}) => (
-              <div className='container-contacts' key={id}>
-                <a href={link} target="blank">{icon}</a>
-                <div className='contacts'>
-                      <p>{title}</p>
-                      <a href={link} target="blank">{contact}</a>
-                </div>
-            </div>
-            ))}
-          </div>
+          <Contacts/>
         </Container >
       </Section>
   )

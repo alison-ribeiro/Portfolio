@@ -2,7 +2,11 @@ import styled from "styled-components";
 import { devices } from "../../styles/responsive";
 
 export const Container = styled.div`
-  button{
+
+  .teste{
+    background-color: red;
+  }
+  .toogle{
     all: unset;
     position: absolute;
     font-size: 3rem;

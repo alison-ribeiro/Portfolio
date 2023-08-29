@@ -27,6 +27,7 @@ export const Nav = styled.div`
     width: 100%;
     position: relative;
     img{
+      max-width: 150px;
       margin: 15px 0;
       border-radius: 50%;
       border: 8px solid ${props => props.theme.colors.secundary};
