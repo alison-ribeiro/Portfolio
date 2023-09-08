@@ -14,7 +14,7 @@ import { useFetch } from "../../hooks/useFetch";
 
 
 function SidBar() {
-  const [menu, setMenu]           = useState(false);
+  const [menu, setMenu] = useState(false);
   const path="";
 
   const handleMenu = () => {

@@ -2,11 +2,7 @@
 import { Container } from './styles';
 import Section from '../../Components/Section';
 
-
-
-
-
-function Sobre(){
+export default function About(){
 
   function getAge(dateString) {
     const today = new Date();
@@ -24,7 +20,6 @@ function Sobre(){
 return(
 
       <Section title={"Sobre"}>
-        
         <Container>
           <div className='photo'>
             <img src='https://webtech.pt/wp-content/uploads/2022/06/O-que-faz-afinal-um-programador-web.png' alt='Foto de codigo'></img>
@@ -44,5 +39,4 @@ return(
   )
 }
 
-export default Sobre;
 

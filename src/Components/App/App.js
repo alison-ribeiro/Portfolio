@@ -30,7 +30,7 @@ function App() {
         <Router>
           <Container>
             <SidBar/>
-              <div className='teste'> 
+              <div className='container-Toogle'> 
                 <button onClick={handleTheme} className='toogle'>
                   {theme === "light"
                     ?

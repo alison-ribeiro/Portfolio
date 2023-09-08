@@ -3,7 +3,7 @@ import { devices } from "../../styles/responsive";
 
 export const Container = styled.div`
 
-  .teste{
+  .container-Toogle{
     background-color: red;
   }
   .toogle{

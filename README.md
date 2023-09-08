@@ -1,70 +1,39 @@
-# Getting Started with Create React App
+# Meu Portfólio em React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este é o meu portfólio pessoal, desenvolvido em React, que apresenta meus projetos do GitHub e atualiza automaticamente as informações do meu perfil, incluindo a foto de perfil.
 
-## Available Scripts
+## Recursos
 
-In the project directory, you can run:
+- Consumo de dados do GitHub: Utiliza a API do GitHub para exibir informações sobre os meus repositórios, incluindo nome, descrição, linguagem e link para o repositório.
+- Integração com EmailJS: Permite que os visitantes do meu portfólio entrem em contato comigo por meio de formulários de contato, usando o EmailJS para enviar mensagens por e-mail.
+- Estilização com Styled Components: Utiliza o Styled Components para criar estilos e componentes reutilizáveis, mantendo uma aparência elegante e coesa em todo o site.
+- Atualização automática de dados do GitHub: As informações sobre os projetos e a foto de perfil são atualizadas automaticamente por meio de requisições à API do GitHub.
 
-### `yarn start`
+## Tecnologias Utilizadas
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- React: Biblioteca JavaScript para a criação de interfaces de usuário.
+- Axios: Biblioteca para fazer requisições HTTP para a API do GitHub.
+- Styled Components: Biblioteca para estilização com CSS-in-JS.
+- EmailJS: Serviço de envio de e-mails fácil de usar para formulários de contato.
+- [Outras dependências e bibliotecas que você tenha usado]
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Configurando Variáveis de Ambiente
 
-### `yarn test`
+Este projeto depende de variáveis de ambiente para funcionar corretamente. Certifique-se de configurar as seguintes variáveis de ambiente antes de executar o projeto:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- `REACT_APP_EMAILJS_SERVICE_ID`: ID do serviço EmailJS.
+- `REACT_APP_EMAILJS_TEMPLATE_ID`: ID do modelo EmailJS.
+- `REACT_APP_EMAILJS_USER_ID`: ID do usuário EmailJS.
 
-### `yarn build`
+### Como Configurar as Variáveis de Ambiente
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Clone este repositório para a sua máquina local.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. Crie um arquivo `.env` na raiz do projeto.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. Abra o arquivo `.env` e defina as variáveis de ambiente com suas respectivas chaves. Por exemplo:
 
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+   ```env
+   REACT_APP_EMAILJS_SERVICE_ID=sua_service_id
+   REACT_APP_EMAILJS_TEMPLATE_ID=seu_template_id
+   REACT_APP_EMAILJS_USER_ID=seu_user_id

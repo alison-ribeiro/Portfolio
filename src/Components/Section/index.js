@@ -20,7 +20,6 @@ function Section({title, children, seeAll, align}){
       setShowMore(100);
   }
 
-
   return(
     <Container  align={align}>
           <div className="container-info">

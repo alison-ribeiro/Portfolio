@@ -5,10 +5,7 @@ import { AiOutlineCopy } from "react-icons/ai";
 
 function Contacts(){
     const contactRefs = useRef([]);
-
     contactRefs.current = contacts.map(() => React.createRef());
-
-
     const handleCopy = async (content) => {
         try {
           await navigator.clipboard.writeText(content);
@@ -17,8 +14,6 @@ function Contacts(){
           console.error('Erro ao copiar o conteúdo:', error);
         }
       };
-    
-
     return(
         <Container>
             {contacts.map(({id,title,contact, icon, link}, index) => (
@@ -28,15 +23,12 @@ function Contacts(){
                   <p>{title}</p>
                   <a href={link} target="blank" ref={contactRefs.current[index]}>{contact}</a>          
                 </div>
-                
                 <button className="copyContent"  onClick={() => handleCopy(contactRefs.current[index].current.textContent)}>
-                    <AiOutlineCopy /> Copiar {title}
+                    <AiOutlineCopy /> 
                 </button>
               </div>
             ))}  
         </Container>
     )
-
 }
-
 export default Contacts;
